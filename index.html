@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Strategy AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        @keyframes blob-anim {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30vw, -50px) scale(1.1); }
+            66% { transform: translate(-20vw, 20px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.7;
+        }
+        .blob1 {
+            width: 400px;
+            height: 400px;
+            top: -150px;
+            left: -150px;
+            background: #8B5CF6;
+            animation: blob-anim 15s infinite alternate;
+        }
+        .blob2 {
+            width: 300px;
+            height: 300px;
+            bottom: -100px;
+            right: -100px;
+            background: #3B82F6;
+            animation: blob-anim 12s infinite alternate-reverse;
+        }
+        .blob3 {
+            width: 350px;
+            height: 350px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #EC4899;
+            animation: blob-anim 18s infinite alternate;
+        }
+        .header-scrolled {
+            background-color: rgba(30, 27, 75, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        .body-no-scroll {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800" x-data="{ mobileMenuOpen: false }" :class="{ 'body-no-scroll': mobileMenuOpen }">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-5">
+            <nav class="flex justify-between items-center">
+                <a href="#" class="flex items-center space-x-2 z-50">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 12a4 4 0 100-8 4 4 0 000 8z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 12h20M12 2v20"></path></svg>
+                </a>
+                <div class="hidden md:flex items-center space-x-10 text-white font-medium">
+                    <a href="#overview" class="hover:text-gray-300 transition-colors">Overview</a>
+                    <a href="#features" class="hover:text-gray-300 transition-colors">Features</a>
+                    <a href="#faq" class="hover:text-gray-300 transition-colors">FAQ</a>
+                    <a href="#about" class="hover:text-gray-300 transition-colors">About</a>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#" class="bg-white text-indigo-600 px-5 py-2 rounded-full hover:bg-gray-200 transition-colors font-semibold shadow-md">Sign In</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden z-50">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-white">
+                        <svg x-show="!mobileMenuOpen" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                        <svg x-show="mobileMenuOpen" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="md:hidden fixed inset-0 bg-gray-900 bg-opacity-90 backdrop-blur-sm" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" style="display: none;">
+            <div class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg p-8" x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="transform translate-x-full" x-transition:enter-end="transform translate-x-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="transform translate-x-0" x-transition:leave-end="transform translate-x-full" style="display: none;">
+                <div class="flex flex-col items-start space-y-6 text-lg">
+                    <a href="#overview" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-indigo-600">Overview</a>
+                    <a href="#features" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-indigo-600">Features</a>
+                    <a href="#faq" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-indigo-600">FAQ</a>
+                    <a href="#about" @click="mobileMenuOpen = false" class="text-gray-800 hover:text-indigo-600">About</a>
+                    <a href="#" class="bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition-colors font-semibold shadow-md">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="overview" class="relative min-h-screen flex items-center justify-start overflow-hidden" style="background-color: #1E1B4B;">
+            <div class="blob blob1"></div>
+            <div class="blob blob2"></div>
+            <div class="blob blob3"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-2xl text-white" data-aos="fade-right">
+                    <h1 class="md:text-7xl font-bold leading-tight">The Most Accurate<br>Brand Strategy<br>You'll Ever Get</h1>
+                    <p class="mt-6">
+                        <span class="border-2 border-white/50 px-4 py-2 rounded-full text-sm font-medium">Powered by AI</span>
+                    </p>
+                    <p class="mt-8 text-lg text-gray-300">
+                        Faster than agencies, smarter than templates - our AI<br>builds a unique and data-backed strategy tailored to your<br>business.
+                    </p>
+                    <a href="form.html" id="try-for-free" class="mt-10 inline-block bg-white text-indigo-600 px-10 py-3 rounded-full font-bold text-lg hover:bg-gray-200 transition-transform transform hover:scale-105 shadow-lg">Try for Free!</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Most Brand Strategies Fail? -->
+        <section class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-gray-900" data-aos="fade-up">Why Most Brand Strategies Fail?</h2>
+                <div class="mt-16 grid md:grid-cols-3 gap-12">
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-blue-600 text-6xl font-bold">1</div>
+                        <h3 class="text-xl font-semibold mt-4">Too Slow & Costly</h3>
+                        <p class="mt-2 text-gray-600">Slowing momentum and draining resources before results even appear.</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-blue-600 text-6xl font-bold">2</div>
+                        <h3 class="text-xl font-semibold mt-4">Abstract & Vague</h3>
+                        <p class="mt-2 text-gray-600">It's hard to turn abstract ideas like core values into actionable plans.</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-blue-600 text-6xl font-bold">3</div>
+                        <h3 class="text-xl font-semibold mt-4">Disconnected</h3>
+                        <p class="mt-2 text-gray-600">Many businesses struggle to connect their brand strategy with sales and marketing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Tool Intro -->
+        <section class="py-28 bg-gradient-to-r from-blue-900 to-purple-800 text-white text-center">
+            <div class="container mx-auto px-6" data-aos="zoom-in">
+                <p class="mb-8 font-medium text-white">That's Where Our AI Tool Comes In</p>
+                <h2 class="text-4xl md:text-5xl font-bold mt-4">We Make Brand Strategy<br><span class="text-pink-400">Practical, Affordable, And Fast</span><br>So You Can Focus On Growing Your Business.</h2>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-gray-900" data-aos="fade-up">Everything You Need For A Complete Brand Strategy</h2>
+                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow flex items-start space-x-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 rounded-full bg-purple-100 flex-shrink-0 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Competitor Research</h3>
+                            <p class="text-gray-600 mt-2">Analyze competitors' strengths and weaknesses to uncover market opportunities.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow flex items-start space-x-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 rounded-full bg-purple-100 flex-shrink-0 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Audience Research</h3>
+                            <p class="text-gray-600 mt-2">Understand your ideal customers, what they value, and how they make decisions.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow flex items-start space-x-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 rounded-full bg-purple-100 flex-shrink-0 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Vision & Mission</h3>
+                            <p class="text-gray-600 mt-2">Define your brand's long-term purpose and the goals that guide your business.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow flex items-start space-x-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-16 h-16 rounded-full bg-purple-100 flex-shrink-0 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Core Values</h3>
+                            <p class="text-gray-600 mt-2">Establish the beliefs and principles that shape your brand's culture and actions.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow flex items-start space-x-6" data-aos="fade-up" data-aos-delay="500">
+                        <div class="w-16 h-16 rounded-full bg-purple-100 flex-shrink-0 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Brand Voice & Personality</h3>
+                            <p class="text-gray-600 mt-2">Develop a consistent tone and character that reflect your brand's identity.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow flex items-start space-x-6" data-aos="fade-up" data-aos-delay="600">
+                        <div class="w-16 h-16 rounded-full bg-purple-100 flex-shrink-0 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.136a1.76 1.76 0 011.17-2.158l5.517-1.724a1.76 1.76 0 012.158 1.17l2.147 6.136a1.76 1.76 0 01-.592 3.417l-5.517 1.724a1.76 1.76 0 01-2.158-1.17z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Key Message & Value Proposition</h3>
+                            <p class="text-gray-600 mt-2">Craft clear, compelling messages that communicate why your brand is the right choice.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center" data-aos="fade-up">
+                    <h2 class="text-4xl font-bold text-gray-900">How It Works</h2>
+                    <p class="text-lg text-gray-600 mt-2">Simple. Fast. Insightful.</p>
+                </div>
+                <div class="mt-16">
+                    <div class="relative max-w-xl mx-auto">
+                        <div class="hidden md:block border-l-2 border-dashed border-gray-300 absolute h-full top-0 left-6"></div>
+                        <div class="mb-12 flex items-center" data-aos="fade-left">
+                            <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center z-10 text-2xl font-bold shadow-lg">1</div>
+                            <div class="ml-8 bg-gray-50 p-6 rounded-lg shadow-md w-full">
+                                <h3 class="text-xl font-bold">Answer A Few Questions</h3>
+                                <p class="text-gray-600 mt-1">Tell us about your business goals and what's on your mind.</p>
+                            </div>
+                        </div>
+                        <div class="mb-12 flex items-center" data-aos="fade-left" data-aos-delay="100">
+                            <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center z-10 text-2xl font-bold shadow-lg">2</div>
+                            <div class="ml-8 bg-gray-50 p-6 rounded-lg shadow-md w-full">
+                                <h3 class="text-xl font-bold">AI Does The Heavy Lifting</h3>
+                                <p class="text-gray-600 mt-1">Generate a customized brand development plan.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center" data-aos="fade-left" data-aos-delay="200">
+                            <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center z-10 text-2xl font-bold shadow-lg">3</div>
+                            <div class="ml-8 bg-gray-50 p-6 rounded-lg shadow-md w-full">
+                                <h3 class="text-xl font-bold">Get Actionable Outputs</h3>
+                                <p class="text-gray-600 mt-1">From strategic planning to brand positioning, you'll have everything you need.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Our AI Tool? -->
+        <section class="py-20 md:py-32 bg-blue-600 text-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center" data-aos="fade-up">Why Choose Our AI Tool?</h2>
+                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-20 h-20 mx-auto bg-white/20 rounded-full flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-6">Clarity Without Complexity</h3>
+                        <p class="mt-2 text-blue-200">No more 60-page slide decks you'll never use.</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-20 h-20 mx-auto bg-white/20 rounded-full flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 6v-1m0-1V4m0 2.01V5M12 20v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-6">Affordable Alternative</h3>
+                        <p class="mt-2 text-blue-200">Cut the cost of hiring a brand strategy consultant.</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-20 h-20 mx-auto bg-white/20 rounded-full flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-6">Action-Driven</h3>
+                        <p class="mt-2 text-blue-200">Our outputs are not just words, they're roadmaps you can execute.</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-20 h-20 mx-auto bg-white/20 rounded-full flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-6">Flexible & Scalable</h3>
+                        <p class="mt-2 text-blue-200">Perfect for startups, SMEs, and corporate strategy teams.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Benefits -->
+        <section class="py-20 md:py-32 text-center bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-gray-900" data-aos="fade-up">Business Benefits</h2>
+                <div class="mt-16 grid md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4" data-aos="fade-right">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex-shrink-0 flex items-center justify-center">
+                            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-lg text-gray-600">Build brand awareness and trust faster.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4" data-aos="fade-left">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex-shrink-0 flex items-center justify-center">
+                            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2a4 4 0 00-4-4H3V9a4 4 0 014-4h2a4 4 0 014 4v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm-2-6h.01M15 11h.01"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-lg text-gray-600">Plan confidently with tested strategic planning frameworks.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4" data-aos="fade-right">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex-shrink-0 flex items-center justify-center">
+                            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-lg text-gray-600">Accelerate growth with AI-driven business development strategies.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4" data-aos="fade-left">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex-shrink-0 flex items-center justify-center">
+                            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 01.293.707V8z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-lg text-gray-600">Create a unified voice across all customer touchpoints.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs -->
+        <section id="faq" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-center text-gray-900">Frequently Asked Questions</h2>
+                <div class="mt-12 space-y-4" x-data="{ open: null, showMore: false }">
+                    <div class="bg-gray-50 rounded-lg">
+                        <button @click="open = open === 1 ? null : 1" class="w-full flex justify-between items-center text-left text-xl font-semibold p-6">
+                            Can AI really understand my brand?
+                            <span class="text-blue-500 text-2xl transform transition-transform" :class="{'rotate-45': open === 1}">+</span>
+                        </button>
+                        <div x-show="open === 1" x-collapse class="px-6 pb-6 text-lg text-gray-600">
+                            <p>Our AI is trained on a massive dataset of brand strategies. It can understand the nuances of your business and generate a strategy that is tailored to your specific needs.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg">
+                        <button @click="open = open === 2 ? null : 2" class="w-full flex justify-between items-center text-left text-xl font-semibold p-6">
+                            Are these just templates?
+                            <span class="text-blue-500 text-2xl transform transition-transform" :class="{'rotate-45': open === 2}">+</span>
+                        </button>
+                        <div x-show="open === 2" x-collapse class="px-6 pb-6 text-lg text-gray-600">
+                            <p>No, our AI generates a unique brand strategy for each business. It takes into account your industry, target audience, and business goals to create a truly customized strategy.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg">
+                        <button @click="open = open === 3 ? null : 3" class="w-full flex justify-between items-center text-left text-xl font-semibold p-6">
+                            Can I use this for rebranding?
+                            <span class="text-blue-500 text-2xl transform transition-transform" :class="{'rotate-45': open === 3}">+</span>
+                        </button>
+                        <div x-show="open === 3" x-collapse class="px-6 pb-6 text-lg text-gray-600">
+                            <p>Yes, our AI can help you with rebranding. It can analyze your existing brand and help you develop a new brand strategy that is more aligned with your business goals.</p>
+                        </div>
+                    </div>
+                    
+                    <div x-show="showMore" x-collapse class="space-y-4">
+                        <div class="bg-gray-50 rounded-lg">
+                            <button @click="open = open === 4 ? null : 4" class="w-full flex justify-between items-center text-left text-xl font-semibold p-6">
+                                Do I still need a consultant?
+                                <span class="text-blue-500 text-2xl transform transition-transform" :class="{'rotate-45': open === 4}">+</span>
+                            </button>
+                            <div x-show="open === 4" x-collapse class="px-6 pb-6 text-lg text-gray-600">
+                                <p>Our AI provides a comprehensive brand strategy. However, for complex challenges or in-depth implementation guidance, a consultant can still provide valuable personalized advice.</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg">
+                            <button @click="open = open === 5 ? null : 5" class="w-full flex justify-between items-center text-left text-xl font-semibold p-6">
+                                How do you ensure professional output?
+                                <span class="text-blue-500 text-2xl transform transition-transform" :class="{'rotate-45': open === 5}">+</span>
+                            </button>
+                            <div x-show="open === 5" x-collapse class="px-6 pb-6 text-lg text-gray-600">
+                                <p>Our tool is built on proven brand strategy frameworks and is continuously refined by expert brand strategists. The AI generates outputs that are creative, market-relevant, and professional.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center pt-8">
+                        <button @click="showMore = !showMore" class="bg-white px-6 py-3 rounded-full border border-gray-300 text-gray-700 font-semibold hover:bg-gray-100 transition-colors">
+                            <span x-text="showMore ? 'Less' : 'More'"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why is This Tool Free? -->
+        <section id="about" class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center" data-aos="fade-up">
+                    <h2 class="text-4xl font-bold text-gray-900">Why is This Tool Free?</h2>
+                </div>
+                <div class="mt-20 max-w-4xl mx-auto grid md:grid-cols-3 gap-12 items-center">
+                    <div class="md:col-span-1 text-center" data-aos="fade-right">
+                        <img src="RS.png" alt="Rusiru Samarathunga" class="w-40 h-40 rounded-full shadow-lg mx-auto">
+                        <div class="mt-6">
+                            <div class="flex items-center justify-center space-x-2">
+                                <svg class="w-6 h-6 text-blue-700" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path></svg>
+                                <p class="text-xl font-bold text-gray-900">Rusiru Samarathunga</p>
+                            </div>
+                            <p class="text-md text-gray-600 mt-1">Founder & Brand Strategist</p>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 text-gray-600 text-lg text-left space-y-6" data-aos="fade-left">
+                        <p class="italic">" We're a startup on a mission to make brand strategy accessible. We're in the validation stage - which means we want as many people as possible to try the tool and give feedback.</p>
+                        <p class="italic">We've already seen more interest than we expected. At the moment, we're covering the costs ourselves, with no profit.</p>
+                        <p class="italic">To keep growing, we'll be introducing affordable pricing plans soon. Until then, enjoy free access while helping us shape the future of AI-powered brand strategy. "</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer CTA -->
+    <footer class="py-24 bg-gradient-to-r from-blue-900 to-purple-800 text-white text-center">
+        <div class="container mx-auto px-6" data-aos="zoom-in">
+            <h2 class="text-4xl font-bold">No Signups, Completely Free</h2>
+            <p class="mt-4 text-lg text-gray-300">Get started right away and see the power of AI-driven brand strategy.</p>
+            <a href="form.html" id="get-started-free" class="mt-8 inline-block bg-white text-blue-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-transform transform hover:scale-105">Get Started Free</a>
+        </div>
+    </footer>
+
+    <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

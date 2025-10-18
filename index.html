@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
+        [x-cloak] {
+            display: none !important;
+        }
         body {
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
@@ -105,7 +108,7 @@
                         <a href="#" class="bg-white text-indigo-600 px-5 py-2 rounded-full hover:bg-gray-200 transition-colors font-semibold shadow-md">Sign In</a>
                     </div>
                     <!-- Mobile menu button -->
-                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white focus:outline-none">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white focus:outline-none z-50" aria-label="Toggle mobile menu" aria-expanded="false" x-bind:aria-expanded="mobileMenuOpen.toString()">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                             <path x-show="mobileMenuOpen" x-cloak stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -114,7 +117,7 @@
                 </div>
             </nav>
             <!-- Mobile menu -->
-            <div x-show="mobileMenuOpen" x-transition class="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4 z-40">
+            <div x-show="mobileMenuOpen" x-cloak x-transition class="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4 z-40">
                 <a href="#overview" class="block px-6 py-2 text-gray-800 hover:bg-gray-100 transition-colors" @click="mobileMenuOpen = false">Overview</a>
                 <a href="#features" class="block px-6 py-2 text-gray-800 hover:bg-gray-100 transition-colors" @click="mobileMenuOpen = false">Features</a>
                 <a href="#faq" class="block px-6 py-2 text-gray-800 hover:bg-gray-100 transition-colors" @click="mobileMenuOpen = false">FAQ</a>
@@ -126,7 +129,7 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="overview" class="relative min-h-screen flex items-center justify-start overflow-hidden" style="background-color: #1E1B4B;">
+        <section id="overview" class="relative min-h-screen flex items-center justify-start overflow-hidden pt-20" style="background-color: #1E1B4B;">
             <div class="blob blob1"></div>
             <div class="blob blob2"></div>
             <div class="blob blob3"></div>

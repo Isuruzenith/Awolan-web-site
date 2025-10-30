@@ -65,135 +65,17 @@
             outline: 2px solid #3B82F6;
             outline-offset: 2px;
         }
-        @keyframes blob-anim {
-            0% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30vw, -50px) scale(1.1); }
-            66% { transform: translate(-20vw, 20px) scale(0.9); }
-            100% { transform: translate(0, 0) scale(1); }
-        }
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.7;
-        }
-        .blob1 {
-            width: 400px;
-            height: 400px;
-            top: -150px;
-            left: -150px;
-            background: #333;
-            animation: blob-anim 15s infinite alternate;
-        }
-        .blob2 {
-            width: 300px;
-            height: 300px;
-            bottom: -100px;
-            right: -100px;
-            background: #666;
-            animation: blob-anim 12s infinite alternate-reverse;
-        }
-        .blob3 {
-            width: 350px;
-            height: 350px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #999;
-            animation: blob-anim 18s infinite alternate;
-        }
-        .header-scrolled {
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-        }
-        .body-no-scroll {
-            overflow: hidden;
-        }
-        @media (max-width: 768px) {
-            .blob1 {
-                width: 200px;
-                height: 200px;
-                top: -50px;
-                left: -50px;
-            }
-            .blob2 {
-                width: 150px;
-                height: 150px;
-                bottom: -25px;
-                right: -50px;
-            }
-            .blob3 {
-                top: 70%;
-                left: 70%;
-                width: 200px;
-                height: 200px;
-            }
-        }
-        @media (max-width: 640px) {
-            .blob3 {
-                display: none;
-            }
-        }
+        
+        
     </style>
 </head>
 <body class="bg-white text-black" x-data="{ mobileMenuOpen: false }" :class="{ 'body-no-scroll': mobileMenuOpen }">
 
     <!-- Header -->
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <div class="container mx-auto px-6 py-5">
-            <nav class="flex justify-between items-center">
-                <a href="#" class="flex items-center space-x-2 z-50">
-                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 12a4 4 0 100-8 4 4 0 000 8z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 12h20M12 2v20"></path></svg>
-                </a>
-                <div class="hidden md:flex items-center space-x-10 text-white font-medium">
-                    <a href="#overview" class="hover:text-gray-300 transition-colors">Overview</a>
-                    <a href="#features" class="hover:text-gray-300 transition-colors">Features</a>
-                    <a href="#faq" class="hover:text-gray-300 transition-colors">FAQ</a>
-                    <a href="#about" class="hover:text-gray-300 transition-colors">About</a>
-                </div>
-                <div class="flex items-center space-x-4 md:space-x-0">
-                    <div class="hidden md:block">
-                        <a href="#" class="bg-white/10 text-white px-5 py-2 rounded-full backdrop-blur-md border border-white/20 hover:bg-white/20 transition-colors font-semibold shadow-lg">Sign In</a>
-                    </div>
-                    <!-- Mobile menu button -->
-                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white focus:outline-none z-50" aria-label="Toggle mobile menu" aria-expanded="false" x-bind:aria-expanded="mobileMenuOpen.toString()">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                            <path x-show="mobileMenuOpen" x-cloak stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-            </nav>
-            <!-- Mobile menu -->
-            <div x-show="mobileMenuOpen" x-cloak x-transition class="md:hidden absolute top-full left-0 right-0 bg-gray-100 shadow-lg py-4 z-40">
-                <a href="#overview" class="block px-6 py-2 text-gray-900 hover:bg-gray-200 transition-colors" @click="mobileMenuOpen = false">Overview</a>
-                <a href="#features" class="block px-6 py-2 text-gray-900 hover:bg-gray-200 transition-colors" @click="mobileMenuOpen = false">Features</a>
-                <a href="#faq" class="block px-6 py-2 text-gray-900 hover:bg-gray-200 transition-colors" @click="mobileMenuOpen = false">FAQ</a>
-                <a href="#about" class="block px-6 py-2 text-gray-900 hover:bg-gray-200 transition-colors" @click="mobileMenuOpen = false">About</a>
-                <a href="#" class="block px-6 py-2 bg-gray-800 text-white rounded-full mx-6 mt-4 text-center hover:bg-gray-700 transition-colors" @click="mobileMenuOpen = false">Sign In</a>
-            </div>
-        </div>
-    </header>
-
+    
     <main>
         <!-- Hero Section -->
-        <section id="overview" class="relative min-h-screen flex items-center justify-start overflow-hidden pt-20" style="background-color: #000000;">
-            <div class="blob blob1"></div>
-            <div class="blob blob2"></div>
-            <div class="blob blob3"></div>
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="text-white" data-aos="fade-right">
-                    <h1 class="custom-h1 font-bold">The Most Accurate<br>Brand Strategy<br>You'll Ever Get</h1>
-                    <p class="mt-6">
-                        <span class="border-2 border-white/50 px-4 py-2 rounded-full text-sm font-medium">Powered by AI</span>
-                    </p>
-                    <p class="mt-8 text-lg text-gray-300">
-                        Faster than agencies, smarter than templates<br>our AI builds a unique and data-backed strategy<br>tailored to your business.
-                    </p>
-                    <a href="form.html" id="try-for-free" class="custom-btn mt-10 mb-10 inline-block bg-white/10 text-white px-10 py-3 rounded-full font-bold backdrop-blur-md border border-white/20 hover:bg-white/20 transition-transform transform hover:scale-105 shadow-lg">Try for Free!</a>
-                </div>
-            </div>
-        </section>
+
 
         <!-- Why Most Brand Strategies Fail? -->
         <section class="py-20 md:py-32 bg-white">

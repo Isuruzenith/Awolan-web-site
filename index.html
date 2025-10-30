@@ -1028,6 +1028,7 @@
         const gravityCenter = document.getElementById('gravity-center');
         
         heroSection.addEventListener('mousemove', (e) => {
+            if (window.innerWidth <= 768) return;
             const x = e.clientX / window.innerWidth;
             const y = e.clientY / window.innerHeight;
             
@@ -1042,10 +1043,31 @@
             // Update gravity center position
             gravityCenter.style.left = (e.clientX - 64) + 'px';
             gravityCenter.style.top = (e.clientY - 64) + 'px';
+
+            // Add interactive star attraction on mouse move
+            const stars = document.querySelectorAll('.star');
+            stars.forEach(star => {
+                const rect = star.getBoundingClientRect();
+                const starX = rect.left + rect.width / 2;
+                const starY = rect.top + rect.height / 2;
+                const distance = Math.sqrt(Math.pow(e.clientX - starX, 2) + Math.pow(e.clientY - starY, 2));
+                
+                if (distance < 100) {
+                    const pullStrength = (100 - distance) / 100;
+                    const angle = Math.atan2(e.clientY - starY, e.clientX - starX);
+                    const pullX = Math.cos(angle) * pullStrength * 5;
+                    const pullY = Math.sin(angle) * pullStrength * 5;
+                    
+                    star.style.transform = `translate(${pullX}px, ${pullY}px) scale(${1 + pullStrength * 0.5})`;
+                } else {
+                    star.style.transform = '';
+                }
+            });
         });
         
         // Show gravity center on mouse enter
         heroSection.addEventListener('mouseenter', () => {
+            if (window.innerWidth <= 768) return;
             gravityCenter.style.opacity = '0.3';
         });
         
@@ -1057,12 +1079,18 @@
         const mouseFollower = document.getElementById('mouse-follower');
         
         document.addEventListener('mousemove', (e) => {
+            if (window.innerWidth <= 768) {
+                mouseFollower.style.display = 'none';
+                return;
+            }
+            mouseFollower.style.display = 'block';
             mouseFollower.style.left = `${e.clientX - 12}px`;
             mouseFollower.style.top = `${e.clientY - 12}px`;
         });
         
         // Click effects
         document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) return;
             // Create blackhole effect
             createBlackhole(e.clientX, e.clientY);
             
@@ -1111,6 +1139,7 @@
         
         clickElements.forEach(element => {
             element.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) return;
                 e.stopPropagation();
                 this.classList.add('active');
                 setTimeout(() => {
@@ -1124,6 +1153,7 @@
         
         glowElements.forEach(element => {
             element.addEventListener('mousemove', (e) => {
+                if (window.innerWidth <= 768) return;
                 const rect = element.getBoundingClientRect();
                 const x = ((e.clientX - rect.left) / rect.width) * 100;
                 const y = ((e.clientY - rect.top) / rect.height) * 100;
@@ -1149,28 +1179,6 @@
         createStarField();
         createParticles();
         createDataPackets();
-        
-        // Add interactive star attraction on mouse move
-        const stars = document.querySelectorAll('.star');
-        heroSection.addEventListener('mousemove', (e) => {
-            stars.forEach(star => {
-                const rect = star.getBoundingClientRect();
-                const starX = rect.left + rect.width / 2;
-                const starY = rect.top + rect.height / 2;
-                const distance = Math.sqrt(Math.pow(e.clientX - starX, 2) + Math.pow(e.clientY - starY, 2));
-                
-                if (distance < 100) {
-                    const pullStrength = (100 - distance) / 100;
-                    const angle = Math.atan2(e.clientY - starY, e.clientX - starX);
-                    const pullX = Math.cos(angle) * pullStrength * 5;
-                    const pullY = Math.sin(angle) * pullStrength * 5;
-                    
-                    star.style.transform = `translate(${pullX}px, ${pullY}px) scale(${1 + pullStrength * 0.5})`;
-                } else {
-                    star.style.transform = '';
-                }
-            });
-        });
     </script>
     <script src="script.js"></script>
 </body>

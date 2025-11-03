@@ -7,72 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
-                    animation: {
-                        'glow': 'glow 2s ease-in-out infinite alternate',
-                        'float': 'float 3s ease-in-out infinite',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'twinkle': 'twinkle 3s ease-in-out infinite',
-                        'orbit': 'orbit 20s linear infinite',
-                        'blackhole': 'blackhole 0.6s ease-out forwards',
-                        'particle-float': 'particle-float 10s linear infinite',
-                        'brain-pulse': 'brain-pulse 4s ease-in-out infinite',
-                        'neural-activity': 'neural-activity 3s linear infinite',
-                        'data-flow': 'data-flow 2s linear infinite',
-                        'rotate-slow': 'rotate-slow 15s linear infinite',
-                    },
-                    keyframes: {
-                        glow: {
-                            '0%': { boxShadow: '0 0 10px rgba(255, 255, 255, 0.1)' },
-                            '100%': { boxShadow: '0 0 20px rgba(255, 255, 255, 0.3)' }
-                        },
-                        float: {
-                            '0%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                            '100%': { transform: 'translateY(0px)' }
-                        },
-                        twinkle: {
-                            '0%, 100%': { opacity: 0.3, transform: 'scale(1)' },
-                            '50%': { opacity: 1, transform: 'scale(1.2)' }
-                        },
-                        orbit: {
-                            '0%': { transform: 'rotate(0deg) translateX(100px) rotate(0deg)' },
-                            '100%': { transform: 'rotate(360deg) translateX(100px) rotate(-360deg)' }
-                        },
-                        blackhole: {
-                            '0%': { transform: 'scale(0) rotate(0deg)', opacity: 1 },
-                            '50%': { transform: 'scale(1.5) rotate(180deg)', opacity: 0.8 },
-                            '100%': { transform: 'scale(0) rotate(360deg)', opacity: 0 }
-                        },
-                        'particle-float': {
-                            '0%': { transform: 'translateY(100vh) translateX(0) rotate(0deg)', opacity: 0 },
-                            '10%': { opacity: 1 },
-                            '90%': { opacity: 1 },
-                            '100%': { transform: 'translateY(-100vh) translateX(100px) rotate(720deg)', opacity: 0 }
-                        },
-                        'brain-pulse': {
-                            '0%, 100%': { transform: 'scale(1)', opacity: 0.8 },
-                            '50%': { transform: 'scale(1.05)', opacity: 1 }
-                        },
-                        'neural-activity': {
-                            '0%': { strokeDashoffset: 100 },
-                            '100%': { strokeDashoffset: 0 }
-                        },
-                        'data-flow': {
-                            '0%': { transform: 'translateX(-100%)' },
-                            '100%': { transform: 'translateX(100%)' }
-                        },
-                        'rotate-slow': {
-                            '0%': { transform: 'rotate(0deg)' },
-                            '100%': { transform: 'rotate(360deg)' }
-                        }
-                    }
                 }
             }
         }
@@ -84,104 +25,170 @@
         
         /* Custom Typography Scales */
         .custom-h1 {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Instrument Sans';
             font-weight: 700;
             font-size: clamp(40px, 5vw, 48px);
             line-height: 1.2;
             color: #ffffff;
         }
         .custom-h2 {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Instrument Sans';
             font-weight: 600;
             font-size: clamp(26px, 4vw, 32px);
             line-height: 1.3;
-            color: #333;
+            color: #161616;
         }
         .custom-h3 {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Instrument Sans';
             font-weight: 600;
             font-size: clamp(20px, 3vw, 24px);
             line-height: 1.4;
-            color: #333;
+            color: #161616;
         }
         .custom-p, .custom-body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Instrument Sans';
             font-weight: 400;
             font-size: clamp(16px, 2vw, 18px);
             line-height: 1.5;
-            color: #555;
+            color: #6D6D6D;
         }
         .custom-label {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Instrument Sans';
             font-weight: 500;
             font-size: clamp(14px, 1.5vw, 16px);
-            color: #666;
+            color: #6D6D6D;
         }
         .custom-btn {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Instrument Sans';
             font-weight: 700;
             font-size: clamp(16px, 2vw, 18px);
             letter-spacing: 0.05em;
         }
         button:focus, a:focus {
-            outline: 2px solid #030404;
+            outline: 2px solid #9CA3AF;
             outline-offset: 2px;
         }
         
-         .gradient-text {
+        .gradient-text {
             background: linear-gradient(to right, #ffffff, #9ca3af);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
-        .glow-effect {
+
+        /* Hero gradient background */
+        .hero-gradient {
+            background: linear-gradient(135deg, #001a66 0%, #003399 15%, #0066cc 25%, #3399ff 40%, #66ccff 50%, #ff66ff 60%, #ff99ff 75%, #ffffff 100%);
+            background-size: 200% 200%;
             position: relative;
             overflow: hidden;
+            animation: gradientShift 15s ease infinite;
         }
-        
-        .glow-effect::before {
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .hero-gradient::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-            opacity: 0;
-            transition: opacity 0.3s;
-            pointer-events: none;
+            top: -50%;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(102, 204, 255, 0.4) 0%, transparent 70%);
+            filter: blur(60px);
+            animation: float 8s ease-in-out infinite;
         }
         
-        .glow-effect:hover::before {
-            opacity: 1;
-        }
-        
-        .parallax-element {
-            transition: transform 0.1s ease-out;
-        }
-        
-        .click-effect {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .click-effect::after {
+        .hero-gradient::after {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
+            bottom: -50%;
+            left: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 102, 255, 0.3) 0%, transparent 70%);
+            filter: blur(60px);
+            animation: float 10s ease-in-out infinite reverse;
         }
         
-        .click-effect.active::after {
-            width: 300px;
-            height: 300px;
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(50px, -40px) scale(1.1);
+            }
+            50% {
+                transform: translate(-30px, 30px) scale(0.95);
+            }
+            75% {
+                transform: translate(40px, 20px) scale(1.05);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        
+        .animate-fade-in-left {
+            animation: fadeInLeft 1s ease-out forwards;
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        .animation-delay-200 {
+            animation-delay: 0.2s;
+        }
+        
+        .animation-delay-400 {
+            animation-delay: 0.4s;
+        }
+        
+        .animation-delay-600 {
+            animation-delay: 0.6s;
         }
         
         .mobile-menu-enter {
@@ -202,334 +209,127 @@
             to { opacity: 0; transform: translateY(-20px); }
         }
         
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle var(--duration) ease-in-out infinite;
+        @keyframes seaWave {
+            0% {
+                transform: translateY(0px) scale(1);
+            }
+            25% {
+                transform: translateY(-8px) scale(1.02);
+            }
+            50% {
+                transform: translateY(-12px) scale(1.05);
+            }
+            75% {
+                transform: translateY(-8px) scale(1.02);
+            }
+            100% {
+                transform: translateY(0px) scale(1);
+            }
         }
         
-        .blackhole-effect {
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-        }
-        
-        .blackhole-core {
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, #000000 0%, #1a1a1a 30%, transparent 70%);
-            border-radius: 50%;
-            position: relative;
-            animation: blackhole 0.6s ease-out forwards;
-        }
-        
-        .blackhole-ring {
-            position: absolute;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            animation: blackhole 0.6s ease-out forwards;
-        }
-        
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: white;
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        
-        .gravitational-pull {
-            transition: transform 0.3s ease-out;
-        }
-        
-        .cosmic-grid {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            transform: perspective(500px) rotateX(60deg);
-            transform-origin: center;
-        }
-        
-        .warp-speed {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.05));
-            animation: warp 2s linear infinite;
-        }
-        
-        @keyframes warp {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(100%); }
-        }
-        
-        .brain-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .brain-core {
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(100, 100, 255, 0.2) 0%, rgba(50, 50, 150, 0.1) 70%, transparent 100%);
-            border-radius: 50%;
-            position: relative;
-            animation: brain-pulse 4s ease-in-out infinite;
-        }
-        
-        .brain-hemisphere {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 2px solid rgba(100, 100, 255, 0.3);
-            overflow: hidden;
-        }
-        
-        .brain-hemisphere::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: conic-gradient(from 0deg, transparent, rgba(100, 100, 255, 0.2), transparent);
-            animation: rotate-slow 15s linear infinite;
-        }
-        
-        .neural-path {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-        }
-        
-        .data-node {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: rgba(100, 200, 255, 0.8);
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(100, 200, 255, 0.8);
-        }
-        
-        .data-packet {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            box-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
-        }
-        
-        .brain-orbit {
-            position: absolute;
-            border: 1px solid rgba(100, 100, 255, 0.2);
-            border-radius: 50%;
-            animation: rotate-slow 20s linear infinite reverse;
-        }
-        
-        .brain-satellite {
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background: rgba(100, 200, 255, 0.8);
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(100, 200, 255, 0.8);
+        .sea-wave-btn {
+            animation: seaWave 3s ease-in-out infinite;
         }
         
     </style>
 </head>
 
 <div>
-    <body class="bg-black text-white overflow-x-hidden">
+    <body class="text-white overflow-x-hidden">
     <!-- Header -->
-    <header id="header" class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <header id="header" class="fixed top-0 w-full z-50 bg-transparent transition-all duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 py-4 sm:py-6 flex justify-between items-center">
+            <!-- Logo -->
             <a href="#" class="flex items-center space-x-2 group">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 transition-transform duration-300 group-hover:rotate-12">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 12a4 4 0 100-8 4 4 0 000 8z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 12h20M12 2v20"></path>
-                </svg>
-                <span class="font-bold text-xl hidden sm:block text-white">Awolan</span>
+                <span class="font-bold text-xl sm:text-2xl text-white">✦ Awolan</span>
             </a>
             
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#overview" class="relative group py-2">
-                    <span class="relative z-10 transition-colors duration-300 text-white group-hover:text-gray-300">Overview</span>
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="#features" class="relative group py-2">
-                    <span class="relative z-10 transition-colors duration-300 text-white group-hover:text-gray-300">Features</span>
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="#faq" class="relative group py-2">
-                    <span class="relative z-10 transition-colors duration-300 text-white group-hover:text-gray-300">FAQ</span>
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="#about" class="relative group py-2">
-                    <span class="relative z-10 transition-colors duration-300 text-white group-hover:text-gray-300">About</span>
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-                </a>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-12">
+                <a href="#features" class="text-white/80 hover:text-white transition-colors duration-300 text-sm font-medium">Features</a>
+                <a href="#about" class="text-white/80 hover:text-white transition-colors duration-300 text-sm font-medium">About</a>
             </div>
             
-            <div class="flex items-center space-x-4">
-                <a href="#" class="hidden sm:block px-4 py-2 border border-gray-600 rounded-lg hover:bg-gray-800 transition-colors duration-300 text-white">Sign In</a>
-                <!-- Mobile menu button -->
-                <button id="mobile-menu-button" aria-label="Toggle mobile menu" aria-expanded="false" class="md:hidden">
-                    <svg id="menu-open-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                    <svg id="menu-close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" aria-label="Toggle mobile menu" aria-expanded="false" class="md:hidden relative z-50">
+                <svg id="menu-open-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-5 sm:w-6 h-5 sm:h-6 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg id="menu-close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-5 sm:w-6 h-5 sm:h-6 hidden text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
         </nav>
         
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="md:hidden bg-black/95 backdrop-blur-md border-t border-gray-800 hidden">
-            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
-                <a href="#overview" class="py-2 border-b border-gray-800 transition-colors duration-300 text-white hover:text-gray-300">Overview</a>
-                <a href="#features" class="py-2 border-b border-gray-800 transition-colors duration-300 text-white hover:text-gray-300">Features</a>
-                <a href="#faq" class="py-2 border-b border-gray-800 transition-colors duration-300 text-white hover:text-gray-300">FAQ</a>
-                <a href="#about" class="py-2 border-b border-gray-800 transition-colors duration-300 text-white hover:text-gray-300">About</a>
-                <a href="#" class="py-2 transition-colors duration-300 text-white hover:text-gray-300">Sign In</a>
+        <div id="mobile-menu" class="md:hidden bg-white/90 backdrop-blur-md border-t border-white/30 hidden fixed top-[64px] left-0 right-0 z-40">
+            <div class="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col space-y-3 sm:space-y-4">
+                <a href="#features" class="py-2 ml-4 transition-colors duration-300 text-black hover:text-gray-700">Features</a>
+                <a href="#about" class="py-2 ml-4 transition-colors duration-300 text-black hover:text-gray-700">About</a>
             </div>
         </div>
+        
+        <!-- Mobile menu backdrop blur -->
+        <div id="mobile-menu-backdrop" class="hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-30 md:hidden"></div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section id="overview" class="min-h-screen flex items-center justify-center relative overflow-hidden">
-            <!-- Cosmic Grid Background -->
-            <div class="cosmic-grid absolute inset-0 z-0"></div>
+        <section id="overview" class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
             
-            <!-- Warp Speed Effect -->
-            <div class="warp-speed absolute inset-0 z-0 opacity-20"></div>
-            
-            <!-- Star Field -->
-            <div id="starfield" class="absolute inset-0 z-0"></div>
-            
-            <!-- Floating Particles -->
-            <div id="particles-container" class="absolute inset-0 z-0"></div>
-            
-            <!-- Background elements -->
-            <div class="absolute inset-0 z-0">
-                <div class="absolute top-20 left-20 w-64 h-64 bg-gray-900 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-                <div class="absolute top-40 right-20 w-72 h-72 bg-gray-800 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style="animation-delay: 2s;"></div>
-                <div class="absolute bottom-20 left-1/2 w-80 h-80 bg-gray-700 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style="animation-delay: 4s;"></div>
-            </div>
-            
-            <div class="container mx-auto px-6 z-10 relative">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="container mx-auto px-4 sm:px-6 z-10 relative">
+                <div class="grid grid-cols-1 gap-8 sm:gap-12 items-center pt-20 sm:pt-0">
+                    
                     <!-- Left Content -->
-                    <div class="text-left mt-16">
-                        <h1 class="custom-h1 text-5xl md:text-7xl font-bold mb-6 leading-tight parallax-element gravitational-pull">
-                            The Most Accurate<br>
-                            <span class="gradient-text">Brand Strategy</span><br>
+                    <div class="text-left mt-8 sm:mt-16">
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-white animate-fade-in-up opacity-0">
+                            The Most Accurate<br class="hidden sm:block">
+                            Brand Strategy<br class="hidden sm:block">
                             You'll Ever Get
                         </h1>
                         
-                        <div class="mb-8">
-                            <p class="text-xl md:text-2xl text-white inline-block px-4 py-2 rounded-full bg-gray-900/50 backdrop-blur-sm glow-effect">
-                                <span class="inline-flex items-center text-sm">
-                                    <svg class="w-5 h-5 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    Powered by AI
-                                </span>
+                        <div class="mb-6 sm:mb-8 animate-fade-in-up animation-delay-200 opacity-0">
+                            <p class="text-xs sm:text-sm md:text-lg text-white inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/30 animate-pulse-slow">
+                                Powered by AI
                             </p>
                         </div>
                         
-                        <p class="text-lg md:text-xl text-white mb-10 max-w-2xl parallax-element gravitational-pull">
-                            Faster than agencies, smarter than templates<br>
-                            our AI builds a unique and data-backed strategy<br>
-                            tailored to your business.
+                        <p class="text-sm sm:text-base md:text-lg text-white/90 mb-8 sm:mb-10 max-w-2xl animate-fade-in-up animation-delay-400 opacity-0">
+                            Faster than agencies, smarter than templates - our AI<br class="hidden sm:block">
+                            builds a unique and data-backed strategy tailored to your business.
                         </p>
                         
-                        <a href="form.html" id="try-for-free" class="click-effect inline-block px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl mb-10">
+                        <a href="form.html" id="try-for-free" class="sea-wave-btn inline-block px-5 sm:px-8 py-2.5 sm:py-3 bg-white text-blue-900 font-bold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl mb-8 sm:mb-10 text-sm sm:text-base animate-fade-in-up animation-delay-600 opacity-0">
                             Try for Free!
                         </a>
                     </div>
-                    
-                    <!-- Right Animated Avatar -->
-                    <div class="hidden lg:flex justify-center lg:justify-end">
-                        <div class="brain-container relative w-full max-w-md h-96 parallax-element gravitational-pull">
-                            <!-- Brain Core -->
-                            <div class="brain-core">
-                                <div class="brain-hemisphere"></div>
-                                
-                                <!-- Neural Paths -->
-                                <svg class="neural-path" viewBox="0 0 200 200">
-                                    <path d="M100,50 Q150,100 100,150 Q50,100 100,50" stroke="rgba(100, 200, 255, 0.5)" stroke-width="2" fill="none" stroke-dasharray="100" stroke-dashoffset="0" class="animate-neural-activity"></path>
-                                    <path d="M50,100 Q100,50 150,100 Q100,150 50,100" stroke="rgba(100, 200, 255, 0.5)" stroke-width="2" fill="none" stroke-dasharray="100" stroke-dashoffset="0" class="animate-neural-activity" style="animation-delay: 0.5s;"></path>
-                                    <path d="M70,70 Q130,70 130,130 Q70,130 70,70" stroke="rgba(100, 200, 255, 0.5)" stroke-width="2" fill="none" stroke-dasharray="100" stroke-dashoffset="0" class="animate-neural-activity" style="animation-delay: 1s;"></path>
-                                </svg>
-                                
-                                <!-- Data Nodes -->
-                                <div class="data-node" style="top: 30%; left: 50%;"></div>
-                                <div class="data-node" style="top: 50%; left: 30%;"></div>
-                                <div class="data-node" style="top: 50%; left: 70%;"></div>
-                                <div class="data-node" style="top: 70%; left: 50%;"></div>
-                                
-                                <!-- Brain Orbits -->
-                                <div class="brain-orbit" style="width: 250px; height: 250px; top: -25px; left: -25px;">
-                                    <div class="brain-satellite" style="top: -7.5px; left: calc(50% - 7.5px);"></div>
-                                </div>
-                                <div class="brain-orbit" style="width: 300px; height: 300px; top: -50px; left: -50px; animation-duration: 25s;">
-                                    <div class="brain-satellite" style="top: -7.5px; left: calc(50% - 7.5px);"></div>
-                                </div>
-                            </div>
-                            
-                            <!-- Data Packets Container -->
-                            <div id="data-packets-container"></div>
-                        </div>
-                    </div>
                 </div>
-            </div>
-            
-
-            
-            <!-- Gravitational Center Indicator -->
-            <div id="gravity-center" class="fixed w-32 h-32 rounded-full pointer-events-none z-40 opacity-0 transition-opacity duration-300">
-                <div class="w-full h-full rounded-full border border-white/20 animate-ping"></div>
             </div>
         </section>
     </main>
 </div>
 <div>
-<body class="bg-white text-black" x-data="{ mobileMenuOpen: false }" :class="{ 'body-no-scroll': mobileMenuOpen }" style="font-family: 'Inter', sans-serif; overflow-x: hidden; font-size: 18px; line-height: 1.5; color: #555;">
+<body class="bg-white text-black" x-data="{ mobileMenuOpen: false }" :class="{ 'body-no-scroll': mobileMenuOpen }" style="font-family: 'Instrument Sans'; overflow-x: hidden; font-size: 18px; line-height: 1.5; color: #555;">
     <main>
         <!-- Why Most Brand Strategies Fail? -->
-        <section class="py-20 md:py-32 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="custom-h2" data-aos="fade-up">Why Most Brand Strategies Fail?</h2>
-                <div class="mt-16 grid md:grid-cols-3 gap-12">
+        <section class="min-h-screen py-12 sm:py-20 md:py-32 bg-white flex items-center justify-center">
+            <div class="container mx-auto px-4 sm:px-6 text-center w-full">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-black" data-aos="fade-up">Why Most Brand Strategies Fail?</h2>
+                <div class="mt-8 sm:mt-16 grid md:grid-cols-3 gap-6 sm:gap-12">
                     <div data-aos="fade-up" data-aos-delay="100">
-                        <div class="text-black text-6xl font-bold">1</div>
-                        <h3 class="text-xl font-semibold mt-4">Too Slow & Costly</h3>
-                        <p class="mt-2 text-gray-600">Slowing momentum and draining resources before results even appear.</p>
+                        <div class="text-black text-4xl sm:text-5xl md:text-6xl font-bold">1</div>
+                        <h3 class="text-lg sm:text-xl font-semibold mt-3 sm:mt-4 text-gray-900">Too Slow & Costly</h3>
+                        <p class="mt-2 text-gray-600 text-sm sm:text-base">Slowing momentum and draining resources before results even appear.</p>
                     </div>
                     <div data-aos="fade-up" data-aos-delay="200">
-                        <div class="text-black text-6xl font-bold">2</div>
-                        <h3 class="text-xl font-semibold mt-4">Abstract & Vague</h3>
-                        <p class="mt-2 text-gray-600">It's hard to turn abstract ideas like core values into actionable plans.</p>
+                        <div class="text-black text-4xl sm:text-5xl md:text-6xl font-bold">2</div>
+                        <h3 class="text-lg sm:text-xl font-semibold mt-3 sm:mt-4 text-gray-900">Abstract & Vague</h3>
+                        <p class="mt-2 text-gray-600 text-sm sm:text-base">It's hard to turn abstract ideas like core values into actionable plans.</p>
                     </div>
                     <div data-aos="fade-up" data-aos-delay="300">
-                        <div class="text-black text-6xl font-bold">3</div>
-                        <h3 class="text-xl font-semibold mt-4">Disconnected</h3>
-                        <p class="mt-2 text-gray-600">Many businesses struggle to connect their brand strategy with sales and marketing.</p>
+                        <div class="text-black text-4xl sm:text-5xl md:text-6xl font-bold">3</div>
+                        <h3 class="text-lg sm:text-xl font-semibold mt-3 sm:mt-4 text-gray-900">Disconnected</h3>
+                        <p class="mt-2 text-gray-600 text-sm sm:text-base">Many businesses struggle to connect their brand strategy with sales and marketing.</p>
                     </div>
                 </div>
             </div>
@@ -537,69 +337,69 @@
 
         <!-- AI Tool Intro -->
 
-        <section class="py-28 bg-gray-100 text-center"  >
-            <div class="container mx-auto px-6" data-aos="zoom-in">
-                <h2 class="custom-h2 font-bold">We make brand strategy<br>practical, affordable, and fast<br>so you can focus on growing your business.</h2>
+        <section class="min-h-screen py-12 sm:py-28 bg-gray-100 text-center flex items-center justify-center">
+            <div class="container mx-auto px-4 sm:px-6 w-full" data-aos="zoom-in">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-black">We make brand strategy<br class="hidden sm:block">practical, affordable, and fast<br class="hidden sm:block">so you can focus on growing your business.</h2>
             </div>
         </section>
 
         <!-- Features Section -->
-        <section id="features" class="py-20 md:py-32 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="custom-h2 font-bold text-center" data-aos="fade-up">Everything You Need For A Complete Brand Strategy</h2>
-                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8 me-10 ms-10">
-                    <div class="bg-gray-100 p-8 rounded-xl transition-shadow flex items-start space-x-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center">
-                            <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <section id="features" class="py-12 sm:py-20 md:py-32 bg-white flex items-center justify-center">
+            <div class="container mx-auto px-4 sm:px-6 w-full">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-16 text-black" data-aos="fade-up">Everything You Need For A Complete Brand Strategy</h2>
+                <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 sm:gap-12">
+                    <div class="flex items-start space-x-4 sm:space-x-6 p-3 sm:p-4 rounded-lg border border-transparent hover:border-gray-300 hover:bg-gray-50 transition-all duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex-shrink-0">
+                            <svg class="w-6 sm:w-8 h-6 sm:h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold">Competitor Research</h3>
-                            <p class="text-gray-600 mt-2">Analyze competitors' strengths and weaknesses to uncover market opportunities.</p>
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900">Competitor Research</h3>
+                            <p class="text-gray-600 mt-1 sm:mt-2 text-xs sm:text-sm">Analyze your competitors' strengths and weaknesses to uncover market opportunities.</p>
                         </div>
                     </div>
-                    <div class="bg-gray-100 p-8 rounded-xl transition-shadow flex items-start space-x-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center">
-                            <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    <div class="flex items-start space-x-4 sm:space-x-6 p-3 sm:p-4 rounded-lg border border-transparent hover:border-gray-300 hover:bg-gray-50 transition-all duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex-shrink-0">
+                            <svg class="w-6 sm:w-8 h-6 sm:h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold">Audience Research</h3>
-                            <p class="text-gray-600 mt-2">Understand your ideal customers, what they value, and how they make decisions.</p>
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900">Audience Research</h3>
+                            <p class="text-gray-600 mt-1 sm:mt-2 text-xs sm:text-sm">Understand who your ideal customers are, what they value, and how they make decisions.</p>
                         </div>
                     </div>
-                    <div class="bg-gray-100 p-8 rounded-xl transition-shadow flex items-start space-x-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center">
-                            <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    <div class="flex items-start space-x-4 sm:space-x-6 p-3 sm:p-4 rounded-lg border border-transparent hover:border-gray-300 hover:bg-gray-50 transition-all duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex-shrink-0">
+                            <svg class="w-6 sm:w-8 h-6 sm:h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold">Vision & Mission</h3>
-                            <p class="text-gray-600 mt-2">Define your brand's long-term purpose and the goals that guide your business.</p>
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900">Vision & Mission</h3>
+                            <p class="text-gray-600 mt-1 sm:mt-2 text-xs sm:text-sm">Define your brand's long-term purpose and the goals that guide your business forward.</p>
                         </div>
                     </div>
-                    <div class="bg-gray-100 p-8 rounded-xl transition-shadow flex items-start space-x-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center">
-                            <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    <div class="flex items-start space-x-4 sm:space-x-6 p-3 sm:p-4 rounded-lg border border-transparent hover:border-gray-300 hover:bg-gray-50 transition-all duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+                        <div class="flex-shrink-0">
+                            <svg class="w-6 sm:w-8 h-6 sm:h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold">Core Values</h3>
-                            <p class="text-gray-600 mt-2">Establish the beliefs and principles that shape your brand's culture and actions.</p>
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900">Core Values</h3>
+                            <p class="text-gray-600 mt-1 sm:mt-2 text-xs sm:text-sm">Establish the beliefs and principles that shape your brand's culture and actions.</p>
                         </div>
                     </div>
-                    <div class="bg-gray-100 p-8 rounded-xl transition-shadow flex items-start space-x-6" data-aos="fade-up" data-aos-delay="500">
-                        <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center">
-                            <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
+                    <div class="flex items-start space-x-4 sm:space-x-6 p-3 sm:p-4 rounded-lg border border-transparent hover:border-gray-300 hover:bg-gray-50 transition-all duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="500">
+                        <div class="flex-shrink-0">
+                            <svg class="w-6 sm:w-8 h-6 sm:h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold">Brand Voice & Personality</h3>
-                            <p class="text-gray-600 mt-2">Develop a consistent tone and character that reflect your brand's identity.</p>
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900">Brand Voice & Personality</h3>
+                            <p class="text-gray-600 mt-1 sm:mt-2 text-xs sm:text-sm">Develop a consistent tone and character that reflect your brand's unique identity.</p>
                         </div>
                     </div>
-                    <div class="bg-gray-100 p-8 rounded-xl transition-shadow flex items-start space-x-6" data-aos="fade-up" data-aos-delay="600">
-                        <div class="w-16 h-16 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center">
-                            <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.136a1.76 1.76 0 011.17-2.158l5.517-1.724a1.76 1.76 0 012.158 1.17l2.147 6.136a1.76 1.76 0 01-.592 3.417l-5.517 1.724a1.76 1.76 0 01-2.158-1.17z"></path></svg>
+                    <div class="flex items-start space-x-4 sm:space-x-6 p-3 sm:p-4 rounded-lg border border-transparent hover:border-gray-300 hover:bg-gray-50 transition-all duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="600">
+                        <div class="flex-shrink-0">
+                            <svg class="w-6 sm:w-8 h-6 sm:h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.136a1.76 1.76 0 011.17-2.158l5.517-1.724a1.76 1.76 0 012.158 1.17l2.147 6.136a1.76 1.76 0 01-.592 3.417l-5.517 1.724a1.76 1.76 0 01-2.158-1.17z"></path></svg>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold">Key Message & Value Proposition</h3>
-                            <p class="text-gray-600 mt-2">Craft clear, compelling messages that communicate why your brand is the right choice.</p>
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900">Key Message & Value Proposition</h3>
+                            <p class="text-gray-600 mt-1 sm:mt-2 text-xs sm:text-sm">Craft clear, compelling messages that communicate why your brand is the right choice.</p>
                         </div>
                     </div>
                 </div>
@@ -607,41 +407,41 @@
         </section>
 
         <!-- How It Works -->
-        <section class="py-20 md:py-32 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-3 gap-16 items-start">
+        <section class="min-h-screen py-12 sm:py-20 md:py-32 bg-white flex items-center justify-center">
+            <div class="container mx-auto px-4 sm:px-6 w-full">
+                <div class="grid md:grid-cols-3 gap-8 sm:gap-16 items-start">
                     
                     <div class="md:col-span-1 text-center my-auto" data-aos="fade-right">
-                        <h2 class="text-4xl font-bold text-black">How It works</h2>
-                        <p class="text-lg text-gray-600 mt-2">Simple. Fast. Insightful.</p>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-black">How It works</h2>
+                        <p class="text-base sm:text-lg text-gray-600 mt-2">Simple. Fast. Insightful.</p>
                     </div>
 
                     <div class="md:col-span-2 relative" data-aos="fade-left">
-                        <div class="absolute left-6 top-6 bottom-6 w-0.5 bg-gray-300 hidden md:block" aria-hidden="true"></div>
+                        <div class="absolute left-5 sm:left-6 top-6 bottom-6 w-0.5 bg-gray-300 hidden md:block" aria-hidden="true"></div>
 
-                        <div class="space-y-16">
+                        <div class="space-y-8 sm:space-y-16">
                             
-                            <div class="relative flex items-start space-x-6">
-                                <div class="bg-gray-800 text-white rounded-full w-12 h-12 flex items-center justify-center z-10 text-2xl font-bold flex-shrink-0">1</div>
-                                <div class="pt-2">
-                                    <h3 class="text-xl font-bold text-gray-900">Answer a few questions</h3>
-                                    <p class="text-gray-500 mt-1">Tell us about your business goals and what's on your mind.</p>
+                            <div class="relative flex items-start space-x-4 sm:space-x-6">
+                                <div class="bg-gray-800 text-white rounded-full w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center z-10 text-lg sm:text-2xl font-bold flex-shrink-0">1</div>
+                                <div class="pt-1 sm:pt-2">
+                                    <h3 class="text-base sm:text-xl font-bold text-gray-900">Answer a few questions</h3>
+                                    <p class="text-gray-500 mt-1 text-sm sm:text-base">Tell us about your business goals and what's on your mind.</p>
                                 </div>
                             </div>
 
-                            <div class="relative flex items-start space-x-6">
-                                <div class="bg-gray-800 text-white rounded-full w-12 h-12 flex items-center justify-center z-10 text-2xl font-bold flex-shrink-0">2</div>
-                                <div class="pt-2">
-                                    <h3 class="text-xl font-bold text-gray-900">AI does the heavy lifting</h3>
-                                    <p class="text-gray-500 mt-1">Generate a customized brand development plan.</p>
+                            <div class="relative flex items-start space-x-4 sm:space-x-6">
+                                <div class="bg-gray-800 text-white rounded-full w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center z-10 text-lg sm:text-2xl font-bold flex-shrink-0">2</div>
+                                <div class="pt-1 sm:pt-2">
+                                    <h3 class="text-base sm:text-xl font-bold text-gray-900">AI does the heavy lifting</h3>
+                                    <p class="text-gray-500 mt-1 text-sm sm:text-base">Generate a customized brand development plan.</p>
                                 </div>
                             </div>
 
-                            <div class="relative flex items-start space-x-6">
-                                <div class="bg-gray-800 text-white rounded-full w-12 h-12 flex items-center justify-center z-10 text-2xl font-bold flex-shrink-0">3</div>
-                                <div class="pt-2">
-                                    <h3 class="text-xl font-bold text-gray-900">Get actionable outputs</h3>
-                                    <p class="text-gray-500 mt-1">From strategic planning frameworks to brand positioning, you'll have everything you need.</p>
+                            <div class="relative flex items-start space-x-4 sm:space-x-6">
+                                <div class="bg-gray-800 text-white rounded-full w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center z-10 text-lg sm:text-2xl font-bold flex-shrink-0">3</div>
+                                <div class="pt-1 sm:pt-2">
+                                    <h3 class="text-base sm:text-xl font-bold text-gray-900">Get actionable outputs</h3>
+                                    <p class="text-gray-500 mt-1 text-sm sm:text-base">From strategic planning frameworks to brand positioning, you'll have everything you need.</p>
                                 </div>
                             </div>
 
@@ -651,77 +451,85 @@
             </div>
         </section>
         <!-- Why Choose Our AI Tool? -->
-        <section class="py-20 md:py-32 bg-white text-black">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center" data-aos="fade-up">Why Choose Our AI Tool?</h2>
-                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-20 h-20 mx-auto bg-gray-200 rounded-full flex items-center justify-center">
-                            <svg class="w-10 h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <section class="py-12 sm:py-20 md:py-32 bg-white text-black flex items-center justify-center">
+            <div class="container mx-auto px-4 sm:px-6 w-full">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-16 text-black" data-aos="fade-up">Why Choose Our AI Tool?</h2>
+                <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 sm:gap-12">
+                    <div class="flex items-start space-x-4 sm:space-x-6 p-3 sm:p-4 rounded-lg border border-transparent hover:border-gray-300 hover:bg-gray-50 transition-all duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex-shrink-0">
+                            <svg class="w-6 sm:w-8 h-6 sm:h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
-                        <h3 class="text-2xl font-bold mt-6">Clarity Without Complexity</h3>
-                        <p class="mt-2 text-gray-600">No more 60-page slide decks you'll never use.</p>
+                        <div>
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900">Clarity Without Complexity</h3>
+                            <p class="text-gray-600 mt-1 sm:mt-2 text-xs sm:text-sm">No more 60-page slide decks you'll never use.</p>
+                        </div>
                     </div>
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-20 h-20 mx-auto bg-gray-200 rounded-full flex items-center justify-center">
-                            <svg class="w-10 h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 6v-1m0-1V4m0 2.01V5M12 20v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1"></path></svg>
+                    <div class="flex items-start space-x-4 sm:space-x-6 p-3 sm:p-4 rounded-lg border border-transparent hover:border-gray-300 hover:bg-gray-50 transition-all duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex-shrink-0">
+                            <svg class="w-6 sm:w-8 h-6 sm:h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 6v-1m0-1V4m0 2.01V5"></path></svg>
                         </div>
-                        <h3 class="text-2xl font-bold mt-6">Affordable Alternative</h3>
-                        <p class="mt-2 text-gray-600">Cut the cost of hiring a brand strategy consultant.</p>
+                        <div>
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900">Affordable Alternative</h3>
+                            <p class="text-gray-600 mt-1 sm:mt-2 text-xs sm:text-sm">Cut the cost of hiring a brand strategy consultant or brand management agency.</p>
+                        </div>
                     </div>
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                        <div class="w-20 h-20 mx-auto bg-gray-200 rounded-full flex items-center justify-center">
-                            <svg class="w-10 h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <div class="flex items-start space-x-4 sm:space-x-6 p-3 sm:p-4 rounded-lg border border-transparent hover:border-gray-300 hover:bg-gray-50 transition-all duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex-shrink-0">
+                            <svg class="w-6 sm:w-8 h-6 sm:h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                         </div>
-                        <h3 class="text-2xl font-bold mt-6">Action-Driven</h3>
-                        <p class="mt-2 text-gray-600">Our outputs are not just words, they're roadmaps you can execute.</p>
+                        <div>
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900">Action-Driven</h3>
+                            <p class="text-gray-600 mt-1 sm:mt-2 text-xs sm:text-sm">Our outputs are not just words, they're roadmaps you can execute.</p>
+                        </div>
                     </div>
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-                        <div class="w-20 h-20 mx-auto bg-gray-200 rounded-full flex items-center justify-center">
-                            <svg class="w-10 h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    <div class="flex items-start space-x-4 sm:space-x-6 p-3 sm:p-4 rounded-lg border border-transparent hover:border-gray-300 hover:bg-gray-50 transition-all duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+                        <div class="flex-shrink-0">
+                            <svg class="w-6 sm:w-8 h-6 sm:h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                         </div>
-                        <h3 class="text-2xl font-bold mt-6">Flexible & Scalable</h3>
-                        <p class="mt-2 text-gray-600">Perfect for startups, SMEs, and corporate strategy teams.</p>
+                        <div>
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900">Flexible & Scalable</h3>
+                            <p class="text-gray-600 mt-1 sm:mt-2 text-xs sm:text-sm">Perfect for startups, SMEs, and corporate strategy teams.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Business Benefits -->
-        <section class="py-20 md:py-32 text-center bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-black" data-aos="fade-up">Business Benefits</h2>
-                <div class="mt-16 grid md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
-                    <div class="bg-gray-100 p-6 rounded-lg flex items-start space-x-4" data-aos="fade-right">
-                        <div class="w-12 h-12 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center">
-                            <svg class="w-7 h-7 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <section class="min-h-screen py-12 sm:py-20 md:py-32 text-center bg-white flex items-center justify-center">
+            <div class="container mx-auto px-4 sm:px-6 w-full">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-black" data-aos="fade-up">Business Benefits</h2>
+                <div class="mt-8 sm:mt-16 grid md:grid-cols-2 gap-6 sm:gap-8 text-left max-w-4xl mx-auto">
+                    <div class="bg-gray-100 p-4 sm:p-6 rounded-lg flex items-start space-x-3 sm:space-x-4 border border-transparent hover:border-gray-300 transition-all duration-300 cursor-pointer" data-aos="fade-right">
+                        <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center">
+                            <svg class="w-5 sm:w-7 h-5 sm:h-7 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
                         <div>
-                            <p class="text-lg text-gray-600">Build brand awareness and trust faster.</p>
+                            <p class="text-sm sm:text-lg text-gray-600">Build brand awareness and trust faster.</p>
                         </div>
                     </div>
-                    <div class="bg-gray-100 p-6 rounded-lg flex items-start space-x-4" data-aos="fade-left">
-                        <div class="w-12 h-12 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center">
-                            <svg class="w-7 h-7 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2a4 4 0 00-4-4H3V9a4 4 0 014-4h2a4 4 0 014 4v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm-2-6h.01M15 11h.01"></path></svg>
+                    <div class="bg-gray-100 p-4 sm:p-6 rounded-lg flex items-start space-x-3 sm:space-x-4 border border-transparent hover:border-gray-300 transition-all duration-300 cursor-pointer" data-aos="fade-left">
+                        <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center">
+                            <svg class="w-5 sm:w-7 h-5 sm:h-7 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2a4 4 0 00-4-4H3V9a4 4 0 014-4h2a4 4 0 014 4v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm-2-6h.01M15 11h.01"></path></svg>
                         </div>
                         <div>
-                            <p class="text-lg text-gray-600">Plan confidently with tested strategic planning frameworks.</p>
+                            <p class="text-sm sm:text-lg text-gray-600">Plan confidently with tested strategic planning frameworks.</p>
                         </div>
                     </div>
-                    <div class="bg-gray-100 p-6 rounded-lg flex items-start space-x-4" data-aos="fade-right">
-                        <div class="w-12 h-12 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center">
-                            <svg class="w-7 h-7 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <div class="bg-gray-100 p-4 sm:p-6 rounded-lg flex items-start space-x-3 sm:space-x-4 border border-transparent hover:border-gray-300 transition-all duration-300 cursor-pointer" data-aos="fade-right">
+                        <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center">
+                            <svg class="w-5 sm:w-7 h-5 sm:h-7 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                         </div>
                         <div>
-                            <p class="text-lg text-gray-600">Accelerate growth with AI-driven business development strategies.</p>
+                            <p class="text-sm sm:text-lg text-gray-600">Accelerate growth with AI-driven business development strategies.</p>
                         </div>
                     </div>
-                    <div class="bg-gray-100 p-6 rounded-lg flex items-start space-x-4" data-aos="fade-left">
-                        <div class="w-12 h-12 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center">
-                            <svg class="w-7 h-7 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 01.293.707V8z"></path></svg>
+                    <div class="bg-gray-100 p-4 sm:p-6 rounded-lg flex items-start space-x-3 sm:space-x-4 border border-transparent hover:border-gray-300 transition-all duration-300 cursor-pointer" data-aos="fade-left">
+                        <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center">
+                            <svg class="w-5 sm:w-7 h-5 sm:h-7 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 01.293.707V8z"></path></svg>
                         </div>
                         <div>
-                            <p class="text-lg text-gray-600">Create a unified voice across all customer touchpoints.</p>
+                            <p class="text-sm sm:text-lg text-gray-600">Create a unified voice across all customer touchpoints.</p>
                         </div>
                     </div>
                 </div>
@@ -729,61 +537,61 @@
         </section>
 
         <!-- FAQs -->
-        <section id="faq" class="py-20 md:py-32 bg-white">
-            <div class="container mx-auto px-6 max-w-4xl" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-center text-black">Frequently Asked Questions</h2>
-                <div class="mt-12 space-y-4" x-data="{ open: null, showMore: false }">
-                    <div class="bg-gray-50 rounded-lg">
-                        <button @click="open = open === 1 ? null : 1" class="w-full flex justify-between items-center text-left text-xl font-semibold p-6">
+        <section id="faq" class="min-h-screen py-12 sm:py-20 md:py-32 bg-white flex items-center justify-center">
+            <div class="container mx-auto px-4 sm:px-6 max-w-4xl w-full" data-aos="fade-up">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-black">Frequently Asked Questions</h2>
+                <div class="mt-8 sm:mt-12 space-y-3 sm:space-y-4" x-data="{ open: null, showMore: false }">
+                    <div class="bg-gray-50 rounded-lg border border-transparent hover:border-gray-300 transition-all duration-300 cursor-pointer">
+                        <button @click="open = open === 1 ? null : 1" class="w-full flex justify-between items-center text-left text-base sm:text-xl font-semibold p-4 sm:p-6">
                             Can AI really understand my brand?
-                            <span class="text-gray-500 text-2xl transform transition-transform" :class="{'rotate-45': open === 1}">+</span>
+                            <span class="text-gray-500 text-xl sm:text-2xl transform transition-transform" :class="{'rotate-45': open === 1}">+</span>
                         </button>
-                        <div x-show="open === 1" x-collapse class="px-6 pb-6 text-lg text-gray-600">
+                        <div x-show="open === 1" x-collapse class="px-4 sm:px-6 pb-4 sm:pb-6 text-sm sm:text-lg text-gray-600">
                             <p>Our AI is trained on a massive dataset of brand strategies. It can understand the nuances of your business and generate a strategy that is tailored to your specific needs.</p>
                         </div>
                     </div>
-                    <div class="bg-gray-50 rounded-lg">
-                        <button @click="open = open === 2 ? null : 2" class="w-full flex justify-between items-center text-left text-xl font-semibold p-6">
+                    <div class="bg-gray-50 rounded-lg border border-transparent hover:border-gray-300 transition-all duration-300 cursor-pointer">
+                        <button @click="open = open === 2 ? null : 2" class="w-full flex justify-between items-center text-left text-base sm:text-xl font-semibold p-4 sm:p-6">
                             Are these just templates?
-                            <span class="text-gray-500 text-2xl transform transition-transform" :class="{'rotate-45': open === 2}">+</span>
+                            <span class="text-gray-500 text-xl sm:text-2xl transform transition-transform" :class="{'rotate-45': open === 2}">+</span>
                         </button>
-                        <div x-show="open === 2" x-collapse class="px-6 pb-6 text-lg text-gray-600">
+                        <div x-show="open === 2" x-collapse class="px-4 sm:px-6 pb-4 sm:pb-6 text-sm sm:text-lg text-gray-600">
                             <p>No, our AI generates a unique brand strategy for each business. It takes into account your industry, target audience, and business goals to create a truly customized strategy.</p>
                         </div>
                     </div>
-                    <div class="bg-gray-50 rounded-lg">
-                        <button @click="open = open === 3 ? null : 3" class="w-full flex justify-between items-center text-left text-xl font-semibold p-6">
+                    <div class="bg-gray-50 rounded-lg border border-transparent hover:border-gray-300 transition-all duration-300 cursor-pointer">
+                        <button @click="open = open === 3 ? null : 3" class="w-full flex justify-between items-center text-left text-base sm:text-xl font-semibold p-4 sm:p-6">
                             Can I use this for rebranding?
-                            <span class="text-gray-500 text-2xl transform transition-transform" :class="{'rotate-45': open === 3}">+</span>
+                            <span class="text-gray-500 text-xl sm:text-2xl transform transition-transform" :class="{'rotate-45': open === 3}">+</span>
                         </button>
-                        <div x-show="open === 3" x-collapse class="px-6 pb-6 text-lg text-gray-600">
+                        <div x-show="open === 3" x-collapse class="px-4 sm:px-6 pb-4 sm:pb-6 text-sm sm:text-lg text-gray-600">
                             <p>Yes, our AI can help you with rebranding. It can analyze your existing brand and help you develop a new brand strategy that is more aligned with your business goals.</p>
                         </div>
                     </div>
                     
-                    <div x-show="showMore" x-collapse class="space-y-4">
-                        <div class="bg-gray-50 rounded-lg">
-                            <button @click="open = open === 4 ? null : 4" class="w-full flex justify-between items-center text-left text-xl font-semibold p-6">
+                    <div x-show="showMore" x-collapse class="space-y-3 sm:space-y-4">
+                        <div class="bg-gray-50 rounded-lg border border-transparent hover:border-gray-300 transition-all duration-300 cursor-pointer">
+                            <button @click="open = open === 4 ? null : 4" class="w-full flex justify-between items-center text-left text-base sm:text-xl font-semibold p-4 sm:p-6">
                                 Do I still need a consultant?
-                                <span class="text-gray-500 text-2xl transform transition-transform" :class="{'rotate-45': open === 4}">+</span>
+                                <span class="text-gray-500 text-xl sm:text-2xl transform transition-transform" :class="{'rotate-45': open === 4}">+</span>
                             </button>
-                            <div x-show="open === 4" x-collapse class="px-6 pb-6 text-lg text-gray-600">
+                            <div x-show="open === 4" x-collapse class="px-4 sm:px-6 pb-4 sm:pb-6 text-sm sm:text-lg text-gray-600">
                                 <p>Our AI provides a comprehensive brand strategy. However, for complex challenges or in-depth implementation guidance, a consultant can still provide valuable personalized advice.</p>
                             </div>
                         </div>
-                        <div class="bg-gray-50 rounded-lg">
-                            <button @click="open = open === 5 ? null : 5" class="w-full flex justify-between items-center text-left text-xl font-semibold p-6">
+                        <div class="bg-gray-50 rounded-lg border border-transparent hover:border-gray-300 transition-all duration-300 cursor-pointer">
+                            <button @click="open = open === 5 ? null : 5" class="w-full flex justify-between items-center text-left text-base sm:text-xl font-semibold p-4 sm:p-6">
                                 How do you ensure professional output?
-                                <span class="text-gray-500 text-2xl transform transition-transform" :class="{'rotate-45': open === 5}">+</span>
+                                <span class="text-gray-500 text-xl sm:text-2xl transform transition-transform" :class="{'rotate-45': open === 5}">+</span>
                             </button>
-                            <div x-show="open === 5" x-collapse class="px-6 pb-6 text-lg text-gray-600">
+                            <div x-show="open === 5" x-collapse class="px-4 sm:px-6 pb-4 sm:pb-6 text-sm sm:text-lg text-gray-600">
                                 <p>Our tool is built on proven brand strategy frameworks and is continuously refined by expert brand strategists. The AI generates outputs that are creative, market-relevant, and professional.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="text-center pt-8">
-                        <button @click="showMore = !showMore" class="bg-white px-6 py-3 rounded-full border border-gray-300 text-gray-700 font-semibold hover:bg-gray-100 transition-colors">
+                    <div class="text-center pt-6 sm:pt-8">
+                        <button @click="showMore = !showMore" class="bg-white px-5 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-300 text-gray-700 font-semibold hover:bg-gray-100 transition-colors text-sm sm:text-base">
                             <span x-text="showMore ? 'Show Less' : 'Show More'"></span>
                         </button>
                     </div>
@@ -792,25 +600,25 @@
         </section>
 
         <!-- Why is This Tool Free? -->
-        <section id="about" class="py-20 md:py-32 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="max-w-6xl mx-auto bg-gray-50 border border-gray-200 rounded-2xl p-12 md:p-16">
+        <section id="about" class="min-h-screen py-12 sm:py-20 md:py-32 bg-white flex items-center justify-center">
+            <div class="container mx-auto px-4 sm:px-6 w-full">
+                <div class="max-w-6xl mx-auto bg-gray-50 border border-gray-200 rounded-2xl p-6 sm:p-12 md:p-16">
                     
                     <div class="text-center" data-aos="fade-up">
-                        <h2 class="text-4xl font-bold text-black">Why is this tool free?</h2>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-black">Why is this tool free?</h2>
                     </div>
 
-                    <div class="mt-16 max-w-5xl mx-auto grid md:grid-cols-3 gap-12 md:gap-16 items-center">
+                    <div class="mt-12 sm:mt-16 max-w-5xl mx-auto grid md:grid-cols-3 gap-8 sm:gap-12 md:gap-16 items-center">
                         
                         <div class="md:col-span-1 text-center" data-aos="fade-right">
-                            <img src="RS.png" alt="Rusiru Samarathunga" class="w-40 h-40 squre bg-black rounded-lg mx-auto object-cover shadow-lg">
-                            <div class="mt-6">
-                                <p class="text-xl font-bold text-gray-900">Rusiru Samarathunga</p>
-                                <p class="text-md text-gray-600 mt-1">Founder & Brand Strategist</p>
+                            <img src="RS.png" alt="Rusiru Samarathunga" class="w-32 sm:w-40 h-32 sm:h-40 bg-black rounded-lg mx-auto object-cover shadow-lg">
+                            <div class="mt-4 sm:mt-6">
+                                <p class="text-lg sm:text-xl font-bold text-gray-900">Rusiru Samarathunga</p>
+                                <p class="text-sm sm:text-md text-gray-600 mt-1">Founder & Brand Strategist</p>
                             </div>
                         </div>
 
-                        <div class="md:col-span-2 text-gray-500 text-lg text-left space-y-6" data-aos="fade-left">
+                        <div class="md:col-span-2 text-gray-500 text-sm sm:text-lg text-left space-y-4 sm:space-y-6" data-aos="fade-left">
                             <p class="italic">" We're a startup on a mission to make brand strategy accessible to everyone. Right now, we're in the validation stage - which means we want as many people as possible to try the tool, give feedback, and help us make it even better.</p>
                             <p class="italic">We've already seen more interest than we expected (thank you!). At the moment, we're covering the costs ourselves, with no profit.</p>
                             <p class="italic">To keep growing and delivering more value, we'll be introducing affordable pricing plans soon - starting at just $39/month. Until then, enjoy free access while helping us shape the future of AI-powered brand strategy. "</p>
@@ -823,11 +631,11 @@
     </main>
 
     <!-- Footer CTA -->
-    <footer class="py-24 bg-white text-black text-center">
-        <div class="container mx-auto px-6" data-aos="zoom-in">
-            <h2 class="text-4xl font-bold">No Signups, Completely Free</h2>
-            <p class="mt-4 text-lg text-gray-600">Get started right away and see the power of AI-driven brand strategy.</p>
-            <a href="form.html" id="get-started-free" class="mt-8 inline-block bg-black text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-700 transition-transform transform hover:scale-105">Get Started Free</a>
+    <footer class="min-h-screen py-12 sm:py-24 bg-white text-black text-center flex items-center justify-center">
+        <div class="container mx-auto px-4 sm:px-6 w-full" data-aos="zoom-in">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">No Signups, Completely Free</h2>
+            <p class="mt-3 sm:mt-4 text-sm sm:text-lg text-gray-600">Get started right away and see the power of AI-driven brand strategy.</p>
+            <a href="form.html" id="get-started-free" class="mt-6 sm:mt-8 inline-block bg-black text-white px-6 sm:px-10 py-3 sm:py-4 rounded-full font-bold text-sm sm:text-lg hover:bg-gray-700 transition-transform transform hover:scale-105">Get Started Free</a>
         </div>
     </footer>
 </div>
@@ -842,172 +650,57 @@
         });
 
         const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('header-scrolled');
+        let lastScrollY = 0;
+        let ticking = false;
+
+        const updateHeaderVisibility = () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > 100) {
+                // Scrolling down
+                if (currentScrollY > lastScrollY) {
+                    header.style.transform = 'translateY(-100%)';
+                    header.style.opacity = '0';
+                    header.style.pointerEvents = 'none';
+                }
+                // Scrolling up
+                else {
+                    header.style.transform = 'translateY(0)';
+                    header.style.opacity = '1';
+                    header.style.pointerEvents = 'auto';
+                }
             } else {
-                header.classList.remove('header-scrolled');
+                // At the top
+                header.style.transform = 'translateY(0)';
+                header.style.opacity = '1';
+                header.style.pointerEvents = 'auto';
+            }
+
+            lastScrollY = currentScrollY;
+            ticking = false;
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateHeaderVisibility);
+                ticking = true;
             }
         });
     </script>
     <script>
-        // Create star field
-        function createStarField() {
-            const starfield = document.getElementById('starfield');
-            const starCount = 150;
-            
-            for (let i = 0; i < starCount; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.width = Math.random() * 3 + 'px';
-                star.style.height = star.style.width;
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.setProperty('--duration', Math.random() * 3 + 2 + 's');
-                star.style.animationDelay = Math.random() * 3 + 's';
-                starfield.appendChild(star);
-            }
-        }
-        
-        // Create floating particles
-        function createParticles() {
-            const container = document.getElementById('particles-container');
-            const particleCount = 30;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle animate-particle-float';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 10 + 's';
-                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-                container.appendChild(particle);
-            }
-        }
-        
-        // Create data packets for brain animation
-        function createDataPackets() {
-            const container = document.getElementById('data-packets-container');
-            const packetCount = 20;
-            
-            for (let i = 0; i < packetCount; i++) {
-                const packet = document.createElement('div');
-                packet.className = 'data-packet';
-                
-                // Random starting position
-                const angle = Math.random() * Math.PI * 2;
-                const distance = Math.random() * 100 + 50;
-                const x = Math.cos(angle) * distance + 100;
-                const y = Math.sin(angle) * distance + 100;
-                
-                packet.style.left = x + 'px';
-                packet.style.top = y + 'px';
-                
-                container.appendChild(packet);
-                
-                // Animate packet movement
-                animateDataPacket(packet);
-            }
-        }
-        
-        // Animate individual data packet
-        function animateDataPacket(packet) {
-            const duration = Math.random() * 3000 + 2000;
-            const startTime = Date.now();
-            
-            function update() {
-                const elapsed = Date.now() - startTime;
-                const progress = (elapsed % duration) / duration;
-                
-                // Calculate new position
-                const angle = progress * Math.PI * 2;
-                const distance = 50 + Math.sin(progress * Math.PI * 4) * 30;
-                const x = Math.cos(angle) * distance + 100;
-                const y = Math.sin(angle) * distance + 100;
-                
-                packet.style.left = x + 'px';
-                packet.style.top = y + 'px';
-                packet.style.opacity = 0.3 + Math.sin(progress * Math.PI * 2) * 0.7;
-                
-                requestAnimationFrame(update);
-            }
-            
-            update();
-        }
-        
-        // Blackhole effect on click
-        function createBlackhole(x, y) {
-            const blackhole = document.createElement('div');
-            blackhole.className = 'blackhole-effect';
-            blackhole.style.left = (x - 50) + 'px';
-            blackhole.style.top = (y - 50) + 'px';
-            
-            const core = document.createElement('div');
-            core.className = 'blackhole-core';
-            blackhole.appendChild(core);
-            
-            // Create rings
-            for (let i = 0; i < 3; i++) {
-                const ring = document.createElement('div');
-                ring.className = 'blackhole-ring';
-                ring.style.width = (100 + i * 30) + 'px';
-                ring.style.height = (100 + i * 30) + 'px';
-                ring.style.left = (-i * 15) + 'px';
-                ring.style.top = (-i * 15) + 'px';
-                ring.style.animationDelay = (i * 0.1) + 's';
-                blackhole.appendChild(ring);
-            }
-            
-            document.body.appendChild(blackhole);
-            
-            // Remove after animation
-            setTimeout(() => {
-                blackhole.remove();
-            }, 600);
-            
-            // Create suction effect for nearby elements
-            const elements = document.querySelectorAll('.gravitational-pull');
-            elements.forEach(element => {
-                const rect = element.getBoundingClientRect();
-                const elementX = rect.left + rect.width / 2;
-                const elementY = rect.top + rect.height / 2;
-                const distance = Math.sqrt(Math.pow(x - elementX, 2) + Math.pow(y - elementY, 2));
-                
-                if (distance < 300) {
-                    const pullStrength = (300 - distance) / 300;
-                    const angle = Math.atan2(y - elementY, x - elementX);
-                    const pullX = Math.cos(angle) * pullStrength * 20;
-                    const pullY = Math.sin(angle) * pullStrength * 20;
-                    
-                    element.style.transform = `translate(${pullX}px, ${pullY}px)`;
-                    
-                    setTimeout(() => {
-                        element.style.transform = '';
-                    }, 300);
-                }
-            });
-        }
-        
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
         const menuOpenIcon = document.getElementById('menu-open-icon');
         const menuCloseIcon = document.getElementById('menu-close-icon');
         
         mobileMenuButton.addEventListener('click', () => {
-            const isOpen = !mobileMenu.classList.contains('hidden');
-            
-            if (isOpen) {
-                mobileMenu.classList.add('hidden');
-                menuOpenIcon.classList.remove('hidden');
-                menuCloseIcon.classList.add('hidden');
-                mobileMenuButton.setAttribute('aria-expanded', 'false');
-            } else {
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('mobile-menu-enter');
-                menuOpenIcon.classList.add('hidden');
-                menuCloseIcon.classList.remove('hidden');
-                mobileMenuButton.setAttribute('aria-expanded', 'true');
-            }
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuBackdrop.classList.toggle('hidden');
+            menuOpenIcon.classList.toggle('hidden');
+            menuCloseIcon.classList.toggle('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', mobileMenuButton.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
         });
         
         // Close mobile menu when clicking on a link
@@ -1015,158 +708,21 @@
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+                mobileMenuBackdrop.classList.add('hidden');
                 menuOpenIcon.classList.remove('hidden');
                 menuCloseIcon.classList.add('hidden');
                 mobileMenuButton.setAttribute('aria-expanded', 'false');
             });
         });
         
-        // Parallax effect on mouse movement
-        const parallaxElements = document.querySelectorAll('.parallax-element');
-        const heroSection = document.getElementById('overview');
-        const gravityCenter = document.getElementById('gravity-center');
-        
-        heroSection.addEventListener('mousemove', (e) => {
-            if (window.innerWidth <= 768) return;
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            
-            parallaxElements.forEach(element => {
-                const speed = element.dataset.speed || 5;
-                const xPos = (x - 0.5) * speed;
-                const yPos = (y - 0.5) * speed;
-                
-                element.style.transform = `translate(${xPos}px, ${yPos}px)`;
-            });
-            
-            // Update gravity center position
-            gravityCenter.style.left = (e.clientX - 64) + 'px';
-            gravityCenter.style.top = (e.clientY - 64) + 'px';
-
-            // Add interactive star attraction on mouse move
-            const stars = document.querySelectorAll('.star');
-            stars.forEach(star => {
-                const rect = star.getBoundingClientRect();
-                const starX = rect.left + rect.width / 2;
-                const starY = rect.top + rect.height / 2;
-                const distance = Math.sqrt(Math.pow(e.clientX - starX, 2) + Math.pow(e.clientY - starY, 2));
-                
-                if (distance < 100) {
-                    const pullStrength = (100 - distance) / 100;
-                    const angle = Math.atan2(e.clientY - starY, e.clientX - starX);
-                    const pullX = Math.cos(angle) * pullStrength * 5;
-                    const pullY = Math.sin(angle) * pullStrength * 5;
-                    
-                    star.style.transform = `translate(${pullX}px, ${pullY}px) scale(${1 + pullStrength * 0.5})`;
-                } else {
-                    star.style.transform = '';
-                }
-            });
+        // Close mobile menu when clicking on backdrop
+        mobileMenuBackdrop.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenuBackdrop.classList.add('hidden');
+            menuOpenIcon.classList.remove('hidden');
+            menuCloseIcon.classList.add('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
         });
-        
-        // Show gravity center on mouse enter
-        heroSection.addEventListener('mouseenter', () => {
-            if (window.innerWidth <= 768) return;
-            gravityCenter.style.opacity = '0.3';
-        });
-        
-        heroSection.addEventListener('mouseleave', () => {
-            gravityCenter.style.opacity = '0';
-        });
-        
-
-        
-        // Click effects
-        heroSection.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) return;
-            // Create blackhole effect
-            createBlackhole(e.clientX, e.clientY);
-            
-            // Create explosion of particles
-            for (let i = 0; i < 10; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = e.clientX + 'px';
-                particle.style.top = e.clientY + 'px';
-                particle.style.position = 'fixed';
-                particle.style.pointerEvents = 'none';
-                particle.style.zIndex = '9999';
-                
-                const angle = (Math.PI * 2 * i) / 10;
-                const velocity = Math.random() * 100 + 50;
-                const vx = Math.cos(angle) * velocity;
-                const vy = Math.sin(angle) * velocity;
-                
-                document.body.appendChild(particle);
-                
-                let opacity = 1;
-                let posX = 0;
-                let posY = 0;
-                
-                const animate = () => {
-                    posX += vx * 0.02;
-                    posY += vy * 0.02;
-                    opacity -= 0.02;
-                    
-                    particle.style.transform = `translate(${posX}px, ${posY}px)`;
-                    particle.style.opacity = opacity;
-                    
-                    if (opacity > 0) {
-                        requestAnimationFrame(animate);
-                    } else {
-                        particle.remove();
-                    }
-                };
-                
-                requestAnimationFrame(animate);
-            }
-        });
-        
-        // Click effect for buttons
-        const clickElements = document.querySelectorAll('.click-effect');
-        
-        clickElements.forEach(element => {
-            element.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) return;
-                e.stopPropagation();
-                this.classList.add('active');
-                setTimeout(() => {
-                    this.classList.remove('active');
-                }, 600);
-            });
-        });
-        
-        // Glow effect on mouse movement for glow-effect elements
-        const glowElements = document.querySelectorAll('.glow-effect');
-        
-        glowElements.forEach(element => {
-            element.addEventListener('mousemove', (e) => {
-                if (window.innerWidth <= 768) return;
-                const rect = element.getBoundingClientRect();
-                const x = ((e.clientX - rect.left) / rect.width) * 100;
-                const y = ((e.clientY - rect.top) / rect.height) * 100;
-                
-                element.style.setProperty('--mouse-x', `${x}%`);
-                element.style.setProperty('--mouse-y', `${y}%`);
-            });
-        });
-        
-        // Header scroll effect
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('bg-black/95');
-                header.classList.remove('bg-black/80');
-            } else {
-                header.classList.add('bg-black/80');
-                header.classList.remove('bg-black/95');
-            }
-        });
-        
-        // Initialize cosmic elements
-        createStarField();
-        createParticles();
-        createDataPackets();
     </script>
     <script src="script.js"></script>
 </body>

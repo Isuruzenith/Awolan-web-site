@@ -14,7 +14,7 @@ function submitForm() {
     emailjs.send('service_14vzprl', 'template_0egymt8', templateParams)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
-            window.location.href = '/thankyou.html';
+            window.location.href = 'thank_you.html';
         }, function(error) {
             console.log('FAILED...', error);
             alert('Failed to submit the form. Please try again.');
@@ -26,5 +26,15 @@ function submitForm() {
         }, function(error) {
             console.log('FAILED...Send Customer Reply', error);
         });
-
 }
+
+// Add form submission event listener
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('brand-form');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            submitForm();
+        });
+    }
+});

@@ -219,16 +219,55 @@
             border-color: #374151;
             background-color: #f3f4f6;
         }
+
+        .header-transparent {
+            background-color: transparent;
+            color: #ffffff;
+        }
+
+        .header-solid {
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #0f172a;
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .header-solid .nav-link {
+            color: #1f2937;
+        }
+
+        .header-solid .nav-link:hover,
+        .header-solid .nav-link:focus {
+            color: #111827;
+        }
+
+        .header-transparent .nav-link {
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+        .header-transparent .nav-link:hover,
+        .header-transparent .nav-link:focus {
+            color: #ffffff;
+        }
+
+        .header-solid .menu-icon {
+            color: #111827;
+        }
+
+        .header-transparent .menu-icon {
+            color: #ffffff;
+        }
     </style>
 </head>
 
 <body class="text-white overflow-x-hidden" x-data="{ mobileMenuOpen: false }" :class="{ 'body-no-scroll': mobileMenuOpen }" style="font-family: 'Instrument Sans';">
     <!-- Header -->
-    <header id="header" class="fixed top-0 w-full z-50 bg-transparent header-transition">
+    <header id="header" class="fixed top-0 w-full z-50 header-transition header-transparent">
         <nav class="container mx-auto px-4 sm:px-6 py-4 sm:py-6 flex justify-between items-center">
             <!-- Logo -->
             <a href="#" class="flex items-center space-x-2 group" aria-label="Awolan home">
-                <svg class="w-28 sm:w-32 h-auto text-white" viewBox="0 0 597.52 142.07" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <svg class="w-28 sm:w-32 h-auto" viewBox="0 0 597.52 142.07" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <g fill="currentColor">
                         <polygon points="96.03 123.61 74.69 84.62 53.35 123.61 39.94 142.07 21.48 128.66 34.89 110.2 65.38 77.85 21.7 69.61 0 62.56 7.05 40.85 28.76 47.91 68.94 66.91 63.28 22.82 63.28 0 86.1 0 86.1 22.82 80.45 66.91 120.63 47.91 142.33 40.85 149.39 62.56 127.68 69.61 84 77.85 114.49 110.2 127.91 128.66 109.45 142.07 96.03 123.61"/>
                         <path d="M191.88,100.76l-8.22,22.85h-16.9l34.32-89.26h20.31l34.31,89.26H238.64l-8.28-22.85ZM211.31,48.2h-.5L196.44,88.11h29.33Z"/>
@@ -243,16 +282,16 @@
             
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center space-x-12">
-                <a href="#features" class="text-white/80 hover:text-white transition-colors duration-300 text-sm font-medium">Features</a>
-                <a href="#about" class="text-white/80 hover:text-white transition-colors duration-300 text-sm font-medium">About</a>
+                <a href="#features" class="transition-colors duration-300 text-sm font-medium nav-link">Features</a>
+                <a href="#about" class="transition-colors duration-300 text-sm font-medium nav-link">About</a>
             </div>
             
             <!-- Mobile menu button -->
             <button id="mobile-menu-button" aria-label="Toggle mobile menu" aria-expanded="false" class="md:hidden relative z-50">
-                <svg id="menu-open-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-5 sm:w-6 h-5 sm:h-6 text-white">
+                <svg id="menu-open-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-5 sm:w-6 h-5 sm:h-6 menu-icon">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
-                <svg id="menu-close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-5 sm:w-6 h-5 sm:h-6 hidden text-white">
+                <svg id="menu-close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-5 sm:w-6 h-5 sm:h-6 hidden menu-icon">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
@@ -307,17 +346,17 @@
         <!-- Why Most Brand Strategies Fail? -->
         <section class="min-h-screen py-12 sm:py-20 md:py-32 bg-white flex items-center justify-center">
             <div class="container mx-auto px-4 sm:px-6 text-left w-full">
-                <h2 class="custom-h2 text-center" data-aos="fade-up">Why Most Brand Strategies Fail?</h2>
-                <div class="mt-8 sm:mt-16 grid md:grid-cols-3 gap-10 sm:gap-16">
-                    <div data-aos="fade-up" data-aos-delay="100" class="flex flex-col items-start text-left space-y-4 sm:space-y-6">
+                <h2 class="custom-h2 text-center mb-8 sm:mb-16 sm:leading-loose" data-aos="fade-up">Why Most Brand Strategies Fail?</h2>
+                <div class="mt-8 sm:mt-16 flex flex-col md:flex-row gap-10 sm:gap-16 max-w-5xl mx-auto px-4 sm:px-8 md:justify-center">
+                    <div data-aos="fade-up" data-aos-delay="100" class="flex-1 flex flex-col items-start text-left space-y-4 sm:space-y-6">
                         <div class="text-black text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight">1</div>
                         <p class="text-gray-500 text-sm sm:text-base md:text-lg leading-relaxed max-w-xs">Too long, too costly - slowing momentum and draining resources before results even appear.</p>
                     </div>
-                    <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col items-start text-left space-y-4 sm:space-y-6">
+                    <div data-aos="fade-up" data-aos-delay="200" class="flex-1 flex flex-col items-start text-left space-y-4 sm:space-y-6">
                         <div class="text-black text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight">2</div>
                         <p class="text-gray-500 text-sm sm:text-base md:text-lg leading-relaxed max-w-xs">It's hard to turn abstract ideas like core values or brand personality into actionable plans.</p>
                     </div>
-                    <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col items-start text-left space-y-4 sm:space-y-6">
+                    <div data-aos="fade-up" data-aos-delay="300" class="flex-1 flex flex-col items-start text-left space-y-4 sm:space-y-6">
                         <div class="text-black text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight">3</div>
                         <p class="text-gray-500 text-sm sm:text-base md:text-lg leading-relaxed max-w-xs">Many businesses struggle to connect their brand strategy with their sales and marketing strategy.</p>
                     </div>
@@ -639,27 +678,38 @@
         });
 
         const header = document.getElementById('header');
-        let lastScrollY = 0;
+        let lastScrollY = window.scrollY;
         let ticking = false;
+        const headerScrollThreshold = 120;
+
+        const toggleHeaderAppearance = (isScrolled) => {
+            if (isScrolled) {
+                header.classList.add('header-solid');
+                header.classList.remove('header-transparent');
+            } else {
+                header.classList.add('header-transparent');
+                header.classList.remove('header-solid');
+            }
+        };
 
         const updateHeaderVisibility = () => {
             const currentScrollY = window.scrollY;
+            toggleHeaderAppearance(currentScrollY > headerScrollThreshold);
 
-            if (currentScrollY > 100) {
-                // Scrolling down
+            if (currentScrollY > headerScrollThreshold) {
                 if (currentScrollY > lastScrollY) {
+                    // Scrolling down
                     header.style.transform = 'translateY(-100%)';
                     header.style.opacity = '0';
                     header.style.pointerEvents = 'none';
-                }
-                // Scrolling up
-                else {
+                } else {
+                    // Scrolling up
                     header.style.transform = 'translateY(0)';
                     header.style.opacity = '1';
                     header.style.pointerEvents = 'auto';
                 }
             } else {
-                // At the top
+                // Near the top
                 header.style.transform = 'translateY(0)';
                 header.style.opacity = '1';
                 header.style.pointerEvents = 'auto';
@@ -675,6 +725,9 @@
                 ticking = true;
             }
         });
+
+        toggleHeaderAppearance(window.scrollY > headerScrollThreshold);
+        updateHeaderVisibility();
         
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');

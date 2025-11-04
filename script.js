@@ -14,7 +14,7 @@ function submitForm() {
     emailjs.send('service_14vzprl', 'template_0egymt8', templateParams)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
-            window.location.href = 'thank_you.html';
+            window.location.href = './thank_you.html';
         }, function(error) {
             console.log('FAILED...', error);
             alert('Failed to submit the form. Please try again.');

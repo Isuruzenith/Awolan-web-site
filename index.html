@@ -9,28 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                }
-            }
-        }
-    </script>
     <style>
         [x-cloak] {
             display: none !important;
         }
         
         /* Custom Typography Scales */
-        .custom-h1 {
-            font-family: 'Instrument Sans';
-            font-weight: 600;
-            font-size: clamp(40px, 5vw, 48px);
-            line-height: 1.2;
-            color: #ffffff;
-        }
         .custom-h2 {
             font-family: 'Instrument Sans';
             font-weight: 500;
@@ -45,35 +29,16 @@
             line-height: 1.4;
             color: #161616;
         }
-        .custom-p, .custom-body {
-            font-family: 'Instrument Sans';
-            font-weight: 400;
-            font-size: clamp(16px, 2vw, 18px);
-            line-height: 1.5;
-            color: #6D6D6D;
-        }
-        .custom-label {
+        .custom-body-small {
             font-family: 'Instrument Sans';
             font-weight: 400;
             font-size: clamp(14px, 1.5vw, 16px);
-            color: #6D6D6D;
-        }
-        .custom-btn {
-            font-family: 'Instrument Sans';
-            font-weight: 600;
-            font-size: clamp(16px, 2vw, 18px);
-            letter-spacing: 0.05em;
+            line-height: 1.5;
+            color: #818488;
         }
         button:focus, a:focus {
             outline: 2px solid #9CA3AF;
             outline-offset: 2px;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(to right, #ffffff, #9ca3af);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         /* Hero gradient background */
@@ -147,17 +112,6 @@
             }
         }
         
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
         @keyframes pulse {
             0%, 100% {
                 transform: scale(1);
@@ -169,10 +123,6 @@
         
         .animate-fade-in-up {
             animation: fadeInUp 1s ease-out forwards;
-        }
-        
-        .animate-fade-in-left {
-            animation: fadeInLeft 1s ease-out forwards;
         }
         
         .animate-pulse-slow {
@@ -189,24 +139,6 @@
         
         .animation-delay-600 {
             animation-delay: 0.6s;
-        }
-        
-        .mobile-menu-enter {
-            animation: slideDown 0.3s ease-out forwards;
-        }
-        
-        .mobile-menu-exit {
-            animation: slideUp 0.3s ease-out forwards;
-        }
-        
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes slideUp {
-            from { opacity: 1; transform: translateY(0); }
-            to { opacity: 0; transform: translateY(-20px); }
         }
         
         @keyframes seaWave {
@@ -375,7 +307,7 @@
         <!-- Why Most Brand Strategies Fail? -->
         <section class="min-h-screen py-12 sm:py-20 md:py-32 bg-white flex items-center justify-center">
             <div class="container mx-auto px-4 sm:px-6 text-left w-full">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-black text-center" data-aos="fade-up">Why Most Brand Strategies Fail?</h2>
+                <h2 class="custom-h2 text-center" data-aos="fade-up">Why Most Brand Strategies Fail?</h2>
                 <div class="mt-8 sm:mt-16 grid md:grid-cols-3 gap-10 sm:gap-16">
                     <div data-aos="fade-up" data-aos-delay="100" class="flex flex-col items-start text-left space-y-4 sm:space-y-6">
                         <div class="text-black text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight">1</div>
@@ -396,14 +328,14 @@
         <!-- AI Tool Intro -->
         <section class="min-h-screen py-12 sm:py-28 bg-gray-100 text-center flex items-center justify-center">
             <div class="container mx-auto px-4 sm:px-6 w-full" data-aos="zoom-in">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-black leading-relaxed sm:leading-loose">We make brand strategy<br class="hidden sm:block">practical, affordable, and fast<br class="hidden sm:block">so you can focus on growing your business.</h2>
+                <h2 class="custom-h2 leading-relaxed sm:leading-loose">We make brand strategy<br class="hidden sm:block">practical, affordable, and fast<br class="hidden sm:block">so you can focus on growing your business.</h2>
             </div>
         </section>
 
         <!-- Features Section -->
         <section id="features" class="py-12 sm:py-20 md:py-32 bg-white flex items-center justify-center">
             <div class="container mx-auto px-4 sm:px-6 w-full">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-center mb-8 sm:mb-16 text-black" data-aos="fade-up">Everything You Need For A Complete Brand Strategy</h2>
+                <h2 class="custom-h2 text-center mb-8 sm:mb-16" data-aos="fade-up">Everything You Need For A Complete Brand Strategy</h2>
                 <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 sm:gap-12">
                     <div class="interactive-card flex items-start space-x-4 sm:space-x-6 p-3 sm:p-4 rounded-lg cursor-pointer" data-aos="fade-up" data-aos-delay="100">
                         <div class="flex-shrink-0">
@@ -469,7 +401,7 @@
                 <div class="grid md:grid-cols-3 gap-8 sm:gap-16 items-start">
                     
                     <div class="md:col-span-1 text-center my-auto" data-aos="fade-right">
-                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-black">How It works</h2>
+                        <h2 class="custom-h2">How It works</h2>
                         <p class="text-base sm:text-lg text-gray-600 mt-2">Simple. Fast. Insightful.</p>
                     </div>
 
@@ -511,7 +443,7 @@
         <!-- Why Choose Our AI Tool? -->
         <section class="py-12 sm:py-20 md:py-32 bg-white text-black flex items-center justify-center">
             <div class="container mx-auto px-4 sm:px-6 w-full">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-center mb-8 sm:mb-16 text-black" data-aos="fade-up">Why Choose Our AI Tool?</h2>
+                <h2 class="custom-h2 text-center mb-8 sm:mb-16" data-aos="fade-up">Why Choose Our AI Tool?</h2>
                 <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 sm:gap-12">
                     <div class="interactive-card flex items-start space-x-4 sm:space-x-6 p-3 sm:p-4 rounded-lg cursor-pointer" data-aos="fade-up" data-aos-delay="100">
                         <div class="flex-shrink-0">
@@ -556,7 +488,7 @@
         <!-- Business Benefits -->
         <section class="min-h-screen py-12 sm:py-20 md:py-32 text-center bg-white flex items-center justify-center">
             <div class="container mx-auto px-4 sm:px-6 w-full">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-black" data-aos="fade-up">Business Benefits</h2>
+                <h2 class="custom-h2" data-aos="fade-up">Business Benefits</h2>
                 <div class="mt-8 sm:mt-16 grid md:grid-cols-2 gap-6 sm:gap-8 text-left max-w-4xl mx-auto">
                     <div class="interactive-card p-4 sm:p-6 rounded-lg flex items-start space-x-3 sm:space-x-4 cursor-pointer" data-aos="fade-right">
                         <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center">
@@ -600,56 +532,56 @@
                 <h2 class="custom-h2 text-center text-black">Frequently Asked Questions</h2>
                 <div class="mt-8 sm:mt-12 space-y-3 sm:space-y-4" x-data="{ open: null, showMore: false }">
                     <div class="bg-gray-50 rounded-lg border border-gray-300 transition-all duration-300 cursor-pointer">
-                        <button @click="open = open === 1 ? null : 1" class="faq-trigger w-full flex justify-between items-center text-left custom-h3 p-4 sm:p-6 text-black">
+                        <button @click="open = open === 1 ? null : 1" class="faq-trigger w-full flex justify-between items-center text-left custom-body p-4 sm:p-6 text-black">
                             Can AI really understand my brand?
                             <span class="text-gray-500 text-xl sm:text-2xl transform transition-transform" :class="{'rotate-45': open === 1}">+</span>
                         </button>
-                        <div x-show="open === 1" x-collapse class="px-4 sm:px-6 pb-4 sm:pb-6 custom-body text-black">
+                        <div x-show="open === 1" x-collapse class="px-4 sm:px-6 pb-4 sm:pb-6 custom-body-small">
                             <p>Our AI is trained on a massive dataset of brand strategies. It can understand the nuances of your business and generate a strategy that is tailored to your specific needs.</p>
                         </div>
                     </div>
                     <div class="bg-gray-50 rounded-lg border border-gray-300 transition-all duration-300 cursor-pointer">
-                        <button @click="open = open === 2 ? null : 2" class="faq-trigger w-full flex justify-between items-center text-left custom-h3 p-4 sm:p-6 text-black">
+                        <button @click="open = open === 2 ? null : 2" class="faq-trigger w-full flex justify-between items-center text-left custom-body p-4 sm:p-6 text-black">
                             Are these just templates?
                             <span class="text-gray-500 text-xl sm:text-2xl transform transition-transform" :class="{'rotate-45': open === 2}">+</span>
                         </button>
-                        <div x-show="open === 2" x-collapse class="px-4 sm:px-6 pb-4 sm:pb-6 custom-body text-black">
+                        <div x-show="open === 2" x-collapse class="px-4 sm:px-6 pb-4 sm:pb-6 custom-body-small">
                             <p>No, our AI generates a unique brand strategy for each business. It takes into account your industry, target audience, and business goals to create a truly customized strategy.</p>
                         </div>
                     </div>
                     <div class="bg-gray-50 rounded-lg border border-gray-300 transition-all duration-300 cursor-pointer">
-                        <button @click="open = open === 3 ? null : 3" class="faq-trigger w-full flex justify-between items-center text-left custom-h3 p-4 sm:p-6 text-black">
+                        <button @click="open = open === 3 ? null : 3" class="faq-trigger w-full flex justify-between items-center text-left custom-body p-4 sm:p-6 text-black">
                             Can I use this for rebranding?
                             <span class="text-gray-500 text-xl sm:text-2xl transform transition-transform" :class="{'rotate-45': open === 3}">+</span>
                         </button>
-                        <div x-show="open === 3" x-collapse class="px-4 sm:px-6 pb-4 sm:pb-6 custom-body text-black">
+                        <div x-show="open === 3" x-collapse class="px-4 sm:px-6 pb-4 sm:pb-6 custom-body-small">
                             <p>Yes, our AI can help you with rebranding. It can analyze your existing brand and help you develop a new brand strategy that is more aligned with your business goals.</p>
                         </div>
                     </div>
                     
                     <div x-show="showMore" x-collapse class="space-y-3 sm:space-y-4">
                         <div class="bg-gray-50 rounded-lg border border-gray-300 transition-all duration-300 cursor-pointer">
-                            <button @click="open = open === 4 ? null : 4" class="faq-trigger w-full flex justify-between items-center text-left custom-h3 p-4 sm:p-6 text-black">
+                            <button @click="open = open === 4 ? null : 4" class="faq-trigger w-full flex justify-between items-center text-left custom-body p-4 sm:p-6 text-black">
                                 Do I still need a consultant?
                                 <span class="text-gray-500 text-xl sm:text-2xl transform transition-transform" :class="{'rotate-45': open === 4}">+</span>
                             </button>
-                            <div x-show="open === 4" x-collapse class="px-4 sm:px-6 pb-4 sm:pb-6 custom-body text-black">
+                            <div x-show="open === 4" x-collapse class="px-4 sm:px-6 pb-4 sm:pb-6 custom-body-small">
                                 <p>Our AI provides a comprehensive brand strategy. However, for complex challenges or in-depth implementation guidance, a consultant can still provide valuable personalized advice.</p>
                             </div>
                         </div>
                         <div class="bg-gray-50 rounded-lg border border-gray-300 transition-all duration-300 cursor-pointer">
-                            <button @click="open = open === 5 ? null : 5" class="faq-trigger w-full flex justify-between items-center text-left custom-h3 p-4 sm:p-6 text-black">
+                            <button @click="open = open === 5 ? null : 5" class="faq-trigger w-full flex justify-between items-center text-left custom-body p-4 sm:p-6 text-black">
                                 How do you ensure professional output?
                                 <span class="text-gray-500 text-xl sm:text-2xl transform transition-transform" :class="{'rotate-45': open === 5}">+</span>
                             </button>
-                            <div x-show="open === 5" x-collapse class="px-4 sm:px-6 pb-4 sm:pb-6 custom-body text-black">
+                            <div x-show="open === 5" x-collapse class="px-4 sm:px-6 pb-4 sm:pb-6 custom-body-small">
                                 <p>Our tool is built on proven brand strategy frameworks and is continuously refined by expert brand strategists. The AI generates outputs that are creative, market-relevant, and professional.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="text-center pt-6 sm:pt-8">
-                        <button @click="showMore = !showMore" class="bg-white px-5 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-300 text-gray-700 font-medium hover:bg-gray-100 transition-colors text-sm sm:text-base">
+                        <button @click="showMore = !showMore" class="bg-white px-5 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-300 text-gray-700 font-normal hover:bg-gray-100 transition-colors text-sm sm:text-base">
                             <span x-text="showMore ? 'Show Less' : 'Show More'"></span>
                         </button>
                     </div>
@@ -663,7 +595,7 @@
                 <div class="max-w-6xl mx-auto bg-gray-50 border border-gray-200 rounded-2xl p-6 sm:p-12 md:p-16">
                     
                     <div class="text-center" data-aos="fade-up">
-                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-black">Why is this tool free?</h2>
+                        <h2 class="custom-h2">Why is this tool free?</h2>
                     </div>
 
                     <div class="mt-12 sm:mt-16 max-w-5xl mx-auto grid md:grid-cols-3 gap-8 sm:gap-12 md:gap-16 items-center">
@@ -691,7 +623,7 @@
     <!-- Footer CTA -->
     <footer class="min-h-screen py-12 sm:py-24 bg-white text-black text-center flex items-center justify-center">
         <div class="container mx-auto px-4 sm:px-6 w-full" data-aos="zoom-in">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold">No Signups, Completely Free</h2>
+            <h2 class="custom-h2">No Signups, Completely Free</h2>
             <p class="mt-3 sm:mt-4 text-sm sm:text-lg text-gray-600">Get started right away and see the power of AI-driven brand strategy.</p>
             <a href="form.html" id="get-started-free" class="mt-6 sm:mt-8 inline-block bg-black text-white px-6 sm:px-10 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-lg hover:bg-gray-700 transition-transform transform hover:scale-105">Get Started Free</a>
         </div>

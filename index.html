@@ -216,10 +216,7 @@
             outline-offset: 2px;
         }
 
-        .interactive-card.card-active {
-            border-color: #374151;
-            background-color: #f3f4f6;
-        }
+        
 
         .header-transparent {
             background-color: transparent;
@@ -766,26 +763,6 @@
             mobileMenuButton.setAttribute('aria-expanded', 'false');
         });
 
-        // Enable consistent hover/active behavior on informational cards
-        const interactiveCards = document.querySelectorAll('.interactive-card');
-        interactiveCards.forEach(card => {
-            card.setAttribute('tabindex', '0');
-            card.setAttribute('role', 'button');
-            card.setAttribute('aria-pressed', 'false');
-
-            card.addEventListener('click', () => {
-                const isActive = card.classList.toggle('card-active');
-                card.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-            });
-
-            card.addEventListener('keydown', event => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    card.click();
-                }
-            });
-        });
-        
         // Fix for animations on page load
         window.addEventListener('load', () => {
             const animatedElements = document.querySelectorAll('.animate-fade-in-up, .animate-fade-in-left');

@@ -3,35 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brand Strategy AI - Thank You</title>
+    <title>Brand Strategy AI - Form</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+            publicKey: "8AfQ_3g6qJf4d7La9",
+        });
+        })();
+    </script>
     <style>
         body {
             font-family: 'Instrument Sans', sans-serif;
         }
 
         /* Custom Typography Scales */
-        .custom-h2 {
+        .custom-h1 {
             font-family: 'Instrument Sans';
             font-weight: 500;
             font-size: clamp(26px, 4vw, 32px);
             line-height: 1.3;
             color: #161616;
         }
-        .custom-p, .custom-body {
+        .custom-p {
             font-family: 'Instrument Sans';
             font-weight: 400;
             font-size: clamp(16px, 2vw, 18px);
             line-height: 1.5;
             color: #6D6D6D;
         }
+        .custom-label {
+            font-family: 'Instrument Sans';
+            font-weight: 500;
+            font-size: clamp(14px, 1.5vw, 16px);
+            color: #161616;
+        }
         .custom-btn {
             font-family: 'Instrument Sans';
-            font-weight: 600;
+            font-weight: 700;
             font-size: clamp(16px, 2vw, 18px);
             letter-spacing: 0.05em;
         }
@@ -41,13 +57,13 @@
         }
     </style>
 </head>
-<body class="bg-white text-gray-800" style="font-family: 'Instrument Sans';">
+<body class="bg-white text-gray-800">
 
     <nav class="container mx-auto px-4 sm:px-6 py-4 sm:py-6">
         <div class="flex justify-between items-center">
             <div>
-                <a href="/home" class="flex items-center space-x-2 group" aria-label="Awolan home">
-                    <svg class="w-28 sm:w-32 h-auto text-gray-900 group-hover:text-gray-700 transition-colors" viewBox="0 0 597.52 142.07" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <a href="/home/" class="flex items-center space-x-2 group" aria-label="Awolan home">
+                    <svg class="w-28 sm:w-32 h-auto text-gray-900" viewBox="0 0 597.52 142.07" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <g fill="currentColor">
                             <polygon points="96.03 123.61 74.69 84.62 53.35 123.61 39.94 142.07 21.48 128.66 34.89 110.2 65.38 77.85 21.7 69.61 0 62.56 7.05 40.85 28.76 47.91 68.94 66.91 63.28 22.82 63.28 0 86.1 0 86.1 22.82 80.45 66.91 120.63 47.91 142.33 40.85 149.39 62.56 127.68 69.61 84 77.85 114.49 110.2 127.91 128.66 109.45 142.07 96.03 123.61"/>
                             <path d="M191.88,100.76l-8.22,22.85h-16.9l34.32-89.26h20.31l34.31,89.26H238.64l-8.28-22.85ZM211.31,48.2h-.5L196.44,88.11h29.33Z"/>
@@ -60,34 +76,11 @@
                     </svg>
                 </a>
             </div>
-            
+
             <div>
-                <a href="/home" class="bg-black text-white px-4 sm:px-5 py-2 rounded-full font-medium text-xs sm:text-sm hover:bg-gray-800 transition-colors hover:scale-105 transform">
+                <a href="/home" class="bg-black text-white px-4 sm:px-5 py-2 rounded-full font-semibold text-xs sm:text-sm hover:bg-gray-800 transition-colors hover:scale-105 transform">
                     Learn More
                 </a>
             </div>
         </div>
     </nav>
-    <div class="container mx-auto px-4 sm:px-6 pt-4 sm:pt-6 pb-8 sm:pb-12">
-        <div class="max-w-lg mx-auto"> 
-            
-            <div class="bg-white p-4 sm:p-8 md:p-12 rounded-2xl shadow-sm border border-gray-200 hover:border-gray-300 transition-all duration-300">
-                <div class="text-center">
-                    <h2 class="custom-h2 text-gray-900">Thank you!</h2>
-                    
-                    <p class="custom-p mt-3 sm:mt-4 text-sm sm:text-base">
-                        You'll receive your personalized brand strategy within 24 hours.
-                    </p>
-                    
-                    <div class="mt-6 sm:mt-8">
-                        <a href="/index.html" class="custom-btn inline-block bg-black text-white px-6 sm:px-8 py-2 sm:py-2.5 rounded-full hover:bg-gray-800 transition-all transform hover:scale-105 duration-300 text-sm sm:text-base">
-                            Close
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>

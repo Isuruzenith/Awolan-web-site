@@ -55,20 +55,10 @@
                     </div>
 
                     <div class="mt-8 sm:mt-10 text-center">
-                        <button type="submit" class="custom-btn inline-flex items-center justify-center bg-black text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full hover:bg-gray-800 transition-all transform hover:scale-105 duration-300 text-sm sm:text-base" aria-live="polite">
-                            <span data-default-text class="inline-flex items-center">
-                                Submit
-                                <svg class="w-4 sm:w-5 h-4 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                            </span>
-                            <span data-loading-text class="hidden inline-flex items-center">
-                                <svg class="w-4 sm:w-5 h-4 sm:h-5 mr-2 animate-spin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 017-7.93V2a10 10 0 00-8.94 8.94H4z"></path>
-                                </svg>
-                                Sending...
-                            </span>
+                        <button type="submit" class="custom-btn inline-flex items-center justify-center bg-black text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full hover:bg-gray-800 transition-all transform hover:scale-105 duration-300 text-sm sm:text-base">
+                            Submit
+                            <svg class="w-4 sm:w-5 h-4 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </button>
-                        <p id="submit-error" class="hidden mt-3 text-sm text-red-600" role="alert"></p>
                     </div>
                 </form>
             </div>

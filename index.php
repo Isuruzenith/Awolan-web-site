@@ -10,8 +10,8 @@
                     <!-- Left Content -->
                     <div class="text-left mt-8 sm:mt-16">
                         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold mb-4 sm:mb-6 leading-tight text-white animate-fade-in-up opacity-0">
-                            The Most Accurate<br class="hidden sm:block">
-                            Brand Strategy<br class="hidden sm:block">
+                            The Most Accurate<br>
+                            Brand Strategy<br>
                             You'll Ever Get
                         </h1>
                         
@@ -22,7 +22,7 @@
                         </div>
                         
                         <p class="text-sm sm:text-base md:text-lg text-white/90 mb-8 sm:mb-10 max-w-2xl animate-fade-in-up animation-delay-400 opacity-0">
-                            Faster than agencies, smarter than templates - our AI<br class="hidden sm:block">
+                            Faster than agencies, smarter than templates - our AI<br>
                             builds a unique and data-backed strategy tailored to your business.
                         </p>
                         
@@ -58,7 +58,7 @@
         <!-- AI Tool Intro -->
         <section class="min-h-screen py-12 sm:py-28 bg-gray-100 text-center flex items-center justify-center">
             <div class="container mx-auto px-4 sm:px-6 w-full" data-aos="zoom-in">
-                <h2 class="custom-h2 leading-relaxed sm:leading-loose">We make brand strategy<br class="hidden sm:block">practical, affordable, and fast<br class="hidden sm:block">so you can focus on growing your business.</h2>
+                <h2 class="custom-h2 leading-relaxed sm:leading-loose">We make brand strategy<br>practical, affordable, and fast<br>so you can focus on growing your business.</h2>
             </div>
         </section>
 

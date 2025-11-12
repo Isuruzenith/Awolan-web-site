@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brand Strategy AI - Thank You</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <!-- Additional favicon formats to improve Google Search compatibility -->
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="alternate icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+    <link rel="shortcut icon" href="/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

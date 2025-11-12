@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Ensure favicon isn't blocked
+# (served at /favicon.ico, /favicon.svg, /favicon-32.png, /favicon-48.png)
